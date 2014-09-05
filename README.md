@@ -3,7 +3,7 @@ Assembly-Syntax-Definition
 
 This is the greatest x86 Assembly (AT&amp;T) syntax definition of All Time
 
-Sublime syntax defn. for x86 assembly (GAS)
+Sublime Text syntax defn. for x86 assembly (GAS)
 
 Purpose:  I couldn't find any (good ones?) online, so I made one myself for ECE391.  Everything I found was NASM, FASM, Intel, or just garbage. This is not to say that this definition is perfect, but for the purposes of ECE391, it will do just fine.
 
@@ -20,3 +20,9 @@ If you wish to make edits to the definition yourself:
 
 Sublime should automatically take care of the syntax highlighting, so there's no need to restart.
 
+
+Description of Files:
+- blahblah.JSON-tmLanguage : the syntax definition in JSON form. More convenient to edit, but must be converted first. See above for instructions.
+- blahblah.tmLanguage : the syntax definition in tmLanguage form (a form of xml). Can be edited directly without compiling.
+- blahblah.tmPreferences : enables the commenting shortcut of sublime text.
+- README.md : read this file from the top for more information.
