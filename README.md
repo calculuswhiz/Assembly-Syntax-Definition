@@ -13,10 +13,10 @@ Installation (Windows):
 - Extract "Assembly x86 AT&T.tmLanguage" and "Comments (ASM x86).tmPreferences" into [sublime directory]\Data\Packages\User\
 
 If you wish to make edits to the definition yourself:
-1. Install package AAAPackageDev via Preferences>Package Control.
-2. To edit, you can open "Assembly x86 AT&T.JSON-tmLanguage," or edit the "Assembly x86 AT&T.tmLanguage" file directly. The JSON is probably easier to look at.
-3. If you chose to edit the JSON, press F7 after saving and generate as Property List.
-4. Move the generated file to the ...\User\ directory, if you haven't already.  You can even keep both files in the directory, if you wish.
+- Install package AAAPackageDev via Preferences>Package Control.
+- To edit, you can open "Assembly x86 AT&T.JSON-tmLanguage," or edit the "Assembly x86 AT&T.tmLanguage" file directly. The JSON is probably easier to look at.
+- If you chose to edit the JSON, press F7 after saving and generate as Property List.
+- Move the generated file to the ...\User\ directory, if you haven't already.  You can even keep both files in the directory, if you wish.
 
 Sublime should automatically take care of the syntax highlighting, so there's no need to restart.
 
