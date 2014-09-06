@@ -9,8 +9,8 @@ Purpose:  I couldn't find any (good ones?) online, so I made one myself for ECE3
 
 Installation (Windows):
 - Get sublime_text (get the 32 bit if you want to crack it).
-- Install "Package Control" (Instructions online)
-- Extract "Assembly x86 AT&T.tmLanguage" and "Comments (ASM x86).tmPreferences" into [sublime directory]\Data\Packages\User\
+- Install "Package Control" : https://sublime.wbond.net/installation#st2
+- Extract/copy/Whatever-I-Don't-Care "Assembly x86 AT&T.tmLanguage" and "Comments (ASM x86).tmPreferences" into [sublime directory]\Data\Packages\User\
 
 If you wish to make edits to the definition yourself:
 - Install package AAAPackageDev via Preferences>Package Control.
