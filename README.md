@@ -1,4 +1,4 @@
-Assembly-Syntax-Definition
+Sublime Text: x86 Assembly Syntax Definition (GAS/AT&T)
 ==========================
 
 This is the greatest x86 Assembly (AT&amp;T) syntax definition of All Time
