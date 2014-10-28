@@ -1,7 +1,7 @@
 Sublime Text: x86 Assembly Syntax Definition (GAS/AT&T)
 ==========================
 
-This is the greatest x86 Assembly (AT&amp;T) syntax definition of All Time
+This is the greatest x86 Assembly (AT&amp;T) syntax definition for Sublime Text of All Time
 
 Sublime Text syntax defn. for x86 assembly (GAS)
 
