@@ -1,0 +1,7 @@
+<snippet>
+    <content><![CDATA[
+${1:disp}(${2:%${3:base_reg}}${4:,%${5:idx_reg}}${6:,${7:scale}})
+]]></content>
+    <tabTrigger>displace</tabTrigger>
+    <scope>source.s</scope>
+</snippet>
