@@ -10,7 +10,9 @@ Purpose:  I couldn't find any (good ones?) online, so I made one myself for ECE3
 Installation (Windows):
 - Get sublime_text (get the 32 bit if you want to crack it).
 - Install "Package Control" : https://sublime.wbond.net/installation#st2
-- Extract/copy/Whatever-I-Don't-Care "Assembly x86 AT&T.tmLanguage" and "Comments (ASM x86).tmPreferences" into [sublime directory]\Data\Packages\User\
+- Extract/copy/Whatever-I-Don't-Care all files into your 'Packages' directory.
+    - This is easily accessible from Preferences>Browse Packages...
+- You *could* always just `git pull` in the 'Packages' directory.
 
 If you wish to make edits to the definition yourself:
 - Install package AAAPackageDev via Preferences>Package Control.
@@ -25,4 +27,5 @@ Description of Files:
 - blahblah.JSON-tmLanguage : the syntax definition in JSON form. More convenient to edit, but must be converted first. See above for instructions.
 - blahblah.tmLanguage : the syntax definition in tmLanguage form (a form of xml). Can be edited directly without compiling.
 - blahblah.tmPreferences : enables the commenting shortcut of sublime text.
+- blahblah.sublime-snippet : shortcuts for tab completion. e.g. Type "disp" on your .s file to get a completion for displacement addressing mode.
 - README.md : read this file from the top for more information.
