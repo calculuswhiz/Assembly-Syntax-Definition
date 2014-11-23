@@ -5,6 +5,8 @@ Sublime Text: x86 Assembly Syntax Definition (AT&T/GAS)
 
 Sublime Text syntax defn. for x86 assembly (GAS)
 
+It is designed to cover instructions and considerations for i386. Others were ignored.2
+
 Purpose:  I couldn't find any (good ones) online, so I made one myself for ECE391.  Everything I found was NASM, FASM, Intel, or just garbage. This is not to say that this definition is perfect, but for the purposes of your college level systems programming class, it will do just fine.
 
 Installation (Windows):
