@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+${1:.asmlabel}:
+pushl   %ebp
+movl    %esp, %ebp
+/* Function start: */
+leave
+ret
+]]></content>
+    <tabTrigger>newframe32</tabTrigger>
+    <scope>source.s</scope>
+</snippet>

@@ -13,15 +13,19 @@
 	<array>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:aa[adms]\b|adc|add|addpd|addps|addsd|addss|addsubpd|aesdec|aesdeclast|aesenc|aesenclast|aesimc|aeskeygenassist|and|andpd|andps|andnpd|andnps|arpl|blendpd|blendps|blendvpd|blendvps|bound(w|l|\b)\b|bsf|bsr|bswap(l|q)?\b|bt|btc|btr|bts|call\b|cbtw\b|cbw|cdq|scdqe|clc\b|cld\b|clflush|cli\b|cltd(w|d|q)?\b|clts|cmc\b|cmova(w|l|q)?\b|cmov|cmp|cmppd|cmpps|cmps|cmpsd|cmpss|cmpxchg|cmpxchg8b|cmpxchg16b|comisd|comiss|cpuid|crc32|cvtdq2pd|cvtdq2ps|cvtpd2dq|cvtpd2pi|cvtpd2ps|cvti2pd|cvtpi2ps|cvtps2dq|cvtps2pd|cvtps2pi|cvtsd2si|cvtsd2ss|cvtsi2sd|cvtsi2ss|cvtss2sd|cvtss2si|cvttpd2dq|cvttpd2pi|cvttps2dq|cvttps2pi|cvttsd2si|cvttss2si|cwd|cqo|cwde|daa\b|das\b|dec|div|divpd|divps|divsd|divss|dppd|dpps|emms|enter\b|extractps|esc|hlt\b|idiv|imul|in|inc|ins|int\b|into\b|invd|invlpg|iret\b|iretd|ja\b|jae\b|jb\b|jbe\b|jc\b|jcxz\b|je\b|jecxz\b|jg\b|jge\b|jl\b|jle\b|jmp\b|jna\b|jnae\b|jnb\b|jnbe\b|jnc\b|jne\b|jng\b|jnge\b|jnl\b|jnle\b|jno\b|jnp\b|jns\b|jnz\b|jo\b|jp\b|jpe\b|jpo\b|js\b|jz\b|lahf\b|lar|lcall\b|lds|lea|leave\b|les|lfs|[ls][gil]dt|lgs|ljmp\b|lmsw|lock\b|lods(b|l|q)?\b|loop\b|loope\b|loopz\b|loopnz\b|loopne\b|lret\b|lsl|lss|ltr|mov|movs(b|l|w)\b|movsx|movzx|mul|neg|nop\b|not|or|out|outs|pop|popa|popad|popf|popfd|push|pusha|pushad|pushf|pushfd|rcl|rcr|rdtsc\b|rep|repe|repz|repne|repnz|ret|retf|rol|ror|sahf\b|sal|sar|sbb|scas|setae?\b|setnbe?\b|setnae?\b|setbe?\b|sete\b|setz\b|setne\b|setnz\b|setl\b|setnge\b|setge\b|setng\b|setle\b|setg\b|setnl\b|setnle\b|sets\b|setns\b|setc\b|setnc\b|seto\b|setno\b|setp\b|setpe|setnp\b|setpo\b|shld?|shrd?|smsw|stc\b|std\b|sti\b|stos|str|sub|sysenter\b|sysexit\b|test|verr|verw|wait\b|fwait|wbinvd|xchg|xlat|xlatb|xor)(?i:b|w|l|q)?\b</string>
+			<string>\b(?i:aa[adms]\b|adc|add|addpd|addps|addsd|addss|addsubpd|aesdec|aesdeclast|aesenc|aesenclast|aesimc|aeskeygenassist|and|andpd|andps|andnpd|andnps|arpl|blendpd|blendps|blendvpd|blendvps|bound(w|l|\b)\b|bsf|bsr|bswap(l|q)?\b|bt|btc|btr|bts|call\b|cbtw\b|cbw|cdq|scdqe|clc\b|cld\b|clflush|cli\b|cltd(w|d|q)?\b|clts|cmc\b|cmova(w|l|q)?\b|cmov|cmp|cmppd|cmpps|cmps|cmpsd|cmpss|cmpxchg|cmpxchg8b|cmpxchg16b|comisd|comiss|cpuid|crc32|cvtdq2pd|cvtdq2ps|cvtpd2dq|cvtpd2pi|cvtpd2ps|cvti2pd|cvtpi2ps|cvtps2dq|cvtps2pd|cvtps2pi|cvtsd2si|cvtsd2ss|cvtsi2sd|cvtsi2ss|cvtss2sd|cvtss2si|cvttpd2dq|cvttpd2pi|cvttps2dq|cvttps2pi|cvttsd2si|cvttss2si|cwd|cqo|cwde|daa\b|das\b|dec|div|divpd|divps|divsd|divss|dppd|dpps|emms|enter\b|extractps|esc|hlt\b|idiv|imul|in|inc|ins|int\b|into\b|invd|invlpg|iret\b|iretd|ja\b|jae\b|jb\b|jbe\b|jc\b|jcxz\b|je\b|jecxz\b|jg\b|jge\b|jl\b|jle\b|jmp\b|jna\b|jnae\b|jnb\b|jnbe\b|jnc\b|jne\b|jng\b|jnge\b|jnl\b|jnle\b|jno\b|jnp\b|jns\b|jnz\b|jo\b|jp\b|jpe\b|jpo\b|js\b|jz\b|lahf\b|lar|lcall\b|lds|lea|leave\b|les|lfs|[ls][gil]dt|lgs|ljmp\b|lmsw|lock\b|lods(b|l|q)?\b|loop\b|loope\b|loopz\b|loopnz\b|loopne\b|lret\b|lsl|lss|ltr|mov|movs(b|l|w)|movsx|movzx|mul|neg|nop\b|not|or|out|outs|pop|popa|popad|popf|popfd|push|pusha|pushad|pushf|pushfd|rcl|rcr|rdtsc\b|rep|repe|repz|repne|repnz|ret|retf|rol|ror|sahf\b|sal|sar|sbb|scas|setae?\b|setnbe?\b|setnae?\b|setbe?\b|sete\b|setz\b|setne\b|setnz\b|setl\b|setnge\b|setge\b|setng\b|setle\b|setg\b|setnl\b|setnle\b|sets\b|setns\b|setc\b|setnc\b|seto\b|setno\b|setp\b|setpe|setnp\b|setpo\b|shld?|shrd?|smsw|stc\b|std\b|sti\b|stos|str|sub|syscall\b|sysenter\b|sysexit\b|test|verr|verw|wait\b|fwait|wbinvd|xchg|xlat|xlatb|xor)(?i:b|w|l|q)?\b</string>
 			<key>name</key>
 			<string>entity.name.function.instructions</string>
 		</dict>
 		<dict>
-			<key>comment</key>
-			<string>Decided to get rid of the special cases. They're the same macros that C takes anyway.</string>
 			<key>match</key>
-			<string>(\s)*#.*$</string>
+			<string>(?&lt;!\w)(#(#|include|define|undef|if|ifn?def|else|elsif|endif|pragma|warning))|__(FILE|LINE|DATE|TIME(STAMP)?|STDC_(VERSION|HOSTED)?|GNUC|GNUC_MINOR|GNUC_PATCHLEVEL|VERSION|STRICT_ANSI|BASE_FILE|INCLUDE_LEVEL|OPTIMIZE|OPTIMIZE_SIZE|NO_INLINE|CHAR_UNSIGNED|CHAR_BIT|INT_SHORT|SCHAR_MAX|SHRT_MAX|INT_MAX|LONG_MAX|LONG_LONG_MAX|REGISTER_PREFIX|USER_LABEL_PREFIX)__\b</string>
+			<key>name</key>
+			<string>support.constant.preprocessor</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>#.*$</string>
 			<key>name</key>
 			<string>comment.assembly</string>
 		</dict>
@@ -73,13 +77,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;!\w)[-~]?0[0-7]+\b</string>
+			<string>(?&lt;!\w)[-~]?0[0-7]*\b</string>
 			<key>name</key>
 			<string>constant.numeric.octal</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;!\w)[$][-~]?0[0-7]+\b</string>
+			<string>(?&lt;!\w)[$][-~]?0[0-7]*\b</string>
 			<key>name</key>
 			<string>constant.other.octal</string>
 		</dict>
@@ -123,7 +127,7 @@
 			<key>comment</key>
 			<string>Assembly label/symbols.</string>
 			<key>match</key>
-			<string>((?&lt;!\w)([A-Za-z$_.]|C-[BA])+[:])</string>
+			<string>((?&lt;!\w)([A-Za-z$_.0-9]|C-[BA])+[:])</string>
 			<key>name</key>
 			<string>keyword.label.assembly</string>
 		</dict>
@@ -131,13 +135,13 @@
 			<key>comment</key>
 			<string>Pseudo-ops and subsection markers</string>
 			<key>match</key>
-			<string>(?&lt;!\w)(\.(align|app-file|asci[iz]|balign|byte|cfi_(start|end)proc|comm|data|def|desc|dim|double|eject|else(if)?|end([ei]f|func|[mr])?|exitm|equ(iv)?|eqv|err(or)?|extern|fail|file|fill|float|globa?l|hidden|hword|ident|if|incbin|include|int(ernal)?|irp|irpc|lcomm|lflags|linkonce|ln|loc(_mark_blocks)?|mri|(no)?list|long|macro|(no)?altmacro|octa|org|p2align[wl]?|popsection|previous|print|protected|p?size|purgem|pushsection|quad|rept|sbttl|scl|section|set|short|single|skip|sleb128|space|stab[dns]|string|struct|subsection|symver|tag|text|title|type|uleb128|val|version|vtable_(entry|inherit)|warning|weak(ref)?|word)\b)</string>
+			<string>(?&lt;!\w)(\.(app-file|asci[iz]|b?align|bundle_(align_mode|(un)?lock)|byte|cfi_(sections|startproc|endproc|personality|lsda|def_cfa|def_cfa_register|def_cfa_offset|adjust_cfa_offset|offset|rel_offset|register|restore|undefined|same_value|remember_state|return_column|signal_frame|window_save|escape|val_encoded_addr|(start|end)proc)|data|def|desc|dim|double|eject|else(if)?|end([ei]f|func|[mr])?|exitm|equ(iv)?|eqv|err(or)?|extern|fail|file|fill|float|globa?l|hidden|hword|ident|if|incbin|include|int(ernal)?|irpc?|l?comm|lflags|linkonce|loc(_mark_blocks)?|mri|(no)?list|long|macro|(no)?altmacro|octa|org|p2align[wl]?|popsection|previous|print|protected|p?size|purgem|pushsection|quad|rept|sbttl|scl|section|set|short|single|skip|sleb128|space|stab[dns]|string(8|16|32|64)?|struct|subsection|symver|tag|text|title|type|uleb128|val|version|vtable_(entry|inherit)|warning|weak(ref)?|word)\b)</string>
 			<key>name</key>
 			<string>support.constant.subsection.assembly</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;!\w)\.(abort|ABORT|line)\b</string>
+			<string>(?&lt;!\w)\.(abort|ABORT|line|ln)\b</string>
 			<key>name</key>
 			<string>invalid.directives</string>
 		</dict>
