@@ -8,7 +8,7 @@
 		<string>S</string>
 	</array>
 	<key>name</key>
-	<string>Assembly x86 AT&amp;T</string>
+	<string>Assembly x86(_64) AT&amp;T</string>
 	<key>patterns</key>
 	<array>
 		<dict>
