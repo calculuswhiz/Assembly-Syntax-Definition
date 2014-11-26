@@ -1,11 +1,9 @@
 <snippet>
     <content><![CDATA[
-pushl   %ebp
-movl    %esp, %ebp
-
-leave
-ret
+.rept   ${1:times}
+.${2:long}   ${3:value}
+.endr
 ]]></content>
-    <tabTrigger>newframe32</tabTrigger>
+    <tabTrigger>blkw</tabTrigger>
     <scope>source.s</scope>
 </snippet>

@@ -1,9 +1,8 @@
 <snippet>
     <content><![CDATA[
-${1:.asmlabel}:
 pushq   %rbp
 movq    %rsp, %rbp
-/* Function start: */
+
 popq    %rbp
 ret
 ]]></content>
