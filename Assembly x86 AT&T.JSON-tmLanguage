@@ -88,6 +88,6 @@
         "s", 
         "S"
     ], 
-    "name": "Assembly x86 AT&T", 
+    "name": "Assembly x86(_64) AT&T", 
     "scopeName": "source.s"
 }
