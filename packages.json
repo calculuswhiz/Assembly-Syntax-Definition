@@ -1,0 +1,19 @@
+{
+    "schema_version" : "2.0",
+    "packages" : [
+        {
+            "name" : "x86-GAS",
+            "description" : "A syntax highlighting scheme for x86 or x64 programs in GAS syntax.",
+            "author" : "calculuswhiz",
+            "details" : "https://github.com/calculuswhiz/Assembly-Syntax-Definition",
+            "homepage" : "about:blank",
+            "labels" : ["syntax highlighting", "x86", "x64", "x86_64", "AT&T"],
+            "releases" : [
+                {
+                    "sublime_text" : "*",
+                    "details" : "https://github.com/calculuswhiz/Assembly-Syntax-Definition"
+                }
+            ]
+        }
+    ]
+}
