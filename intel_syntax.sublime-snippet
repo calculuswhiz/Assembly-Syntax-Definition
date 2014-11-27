@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+intel_syntax noprefix
+/* Umm... What are you doing? You know this highlighting scheme is for GAS syntax, right? */
+]]></content>
+    <tabTrigger>intel_syntax</tabTrigger>
+    <scope>source.s</scope>
+</snippet>
