@@ -9,7 +9,7 @@ It is designed to cover instructions and considerations for i386. Others were ig
 
 Purpose:  I couldn't find any (good ones) online, so I made one myself for my ECE391 class at UIUC.  Everything I found was NASM, FASM, Intel, or just garbage. This is not to say that this definition is perfect, but for the purposes of your college level systems programming class, it will do just fine.
 
-Installation (Windows):
+Installation (Any platform):
 - Get sublime_text (get the 32 bit if you want to crack it).
 - Install "Package Control" : https://sublime.wbond.net/installation#st2
 - Extract/copy/Whatever-I-Don't-Care all files into your 'Packages' directory.
