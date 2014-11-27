@@ -15,7 +15,7 @@
 			<key>comment</key>
 			<string>I may organize these later based on processor additions.</string>
 			<key>match</key>
-			<string>\b(?i:aa[adms]\b|adc|x?add|and|arpl\b|bound[wl]?\b|bs[fr]\b|bswap[lq]?\b|bt[crs]?\b|call\b|cbtw\b|cbw|cdqe?\b|clc\b|cld\b|clflush|cli\b|cltd[dqw]?\b|clts\b|cmc\b|cmov(n?[abgl]e?|n?[ceosz]|np|p[eo]?)[lqw]?\b|cmp|cmps[dq]?\b|cmpxchg|cmpxchg(8|16)b\b||cpuid\b|cwde?|cqo\b|daa\b|das\b|dec|div|enter\b|esc|hlt\b|idiv|imul|in|inc|insd?|int\b|into\b|invd\b|invlpg\b|iret[dfq]?\b|j(n?[abgl]e?|n?[ceosz]|np|p[eo]?)\b|jmp\b|j[er]?cxz\b|lahf\b|lar\b|lcall\b|lea|leave\b|l[defgs]s\b|[ls][gil]dt\b|ljmp\b|lmsw\b|loadall|lock\b|lods[bdlq]?\b|loopn?[ez][dw]\b|lret\b|lsl\b|ltr\b|mov|movs[bdlw]|mov[sz]x|mul|neg|nop\b|not|or|out|outsd?\b|pop|popa|pop[af]d\b|popf[lq]?\b|push|pushal?\b|push[af]d\b|pushf[lq]?\b|rc[lr]|(rd|wr)msr\b|rdtsc\b|repn?[ez]|retf?|ro[lr]|rsm\b|sahf\b|sa[lr]|sbb|scas[bdqw]?\b|set(n?[abgl]e?|n?[ceosz]|np|p[eo]?)\b|sh[lr]d?|smsw\b|stc\b|std\b|sti\b|stosd?\b|str\b|sub|syscall\b|sysret\b|sysenter\b|sysexit\b|test|ud2\b|ver[rw]|wait\b|fwait|wbinvd\b|xchg|xlat|xlatb|xor)(?i:[bwlq])?\b</string>
+			<string>\b(?i:aa[adms]\b|adc|x?add|and|arpl\b|bound[wl]?\b|bs[fr]\b|bswap[lq]?\b|bt[crs]?\b|call\b|cbtw\b|cbw|cdqe?\b|clc\b|cld\b|clflush|cli\b|cltd[dqw]?\b|clts\b|cmc\b|cmov(n?[abgl]e?|n?[ceosz]|np|p[eo]?)[lqw]?\b|cmp|cmps[dq]?\b|cmpxchg|cmpxchg(8|16)b\b||cpuid\b|cwde?|cqo\b|daa\b|das\b|dec|div|enter\b|esc|hlt\b|idiv|imul|in|inc|insd?|int3?\b|into\b|invd\b|invlpg\b|iret[dfq]?\b|j(n?[abgl]e?|n?[ceosz]|np|p[eo]?)\b|jmp\b|j[er]?cxz\b|lahf\b|lar\b|lcall\b|lea|leave\b|l[defgs]s\b|[ls][gil]dt\b|ljmp\b|lmsw\b|loadall|lock\b|lods[bdlq]?\b|loopn?[ez][dw]\b|lret\b|lsl\b|ltr\b|mov|mov[sz][bdlw]|movsxd|mov[sz]x|mul|neg|nop\b|not|or|out|outsd?\b|pop|popa|pop[af]d\b|popf[lq]?\b|push|pushal?\b|push[af]d\b|pushf[lq]?\b|rc[lr]|(rd|wr)msr\b|rdtscp?\b|repn?[ez]|retf?|ro[lr]|rsm\b|sahf\b|sa[lr]|sbb|scas[bdqw]?\b|set(n?[abgl]e?|n?[ceosz]|np|p[eo]?)\b|sh[lr]d?|smsw\b|stc\b|std\b|sti\b|stos[dq]?\b|str\b|sub|swapgs\b|syscall\b|sysret\b|sysenter\b|sysexit\b|test|ud2\b|ver[rw]|wait\b|fwait|wbinvd\b|xchg|xlat|xlatb|xor)(?i:[bwlq])?\b</string>
 			<key>name</key>
 			<string>entity.name.function.instructions</string>
 		</dict>
@@ -163,7 +163,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>["].*["]</string>
+			<string>["&lt;].*?["&gt;]</string>
 			<key>name</key>
 			<string>string.quoted</string>
 		</dict>
