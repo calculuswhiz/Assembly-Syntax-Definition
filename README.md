@@ -5,9 +5,11 @@ Sublime Text: x86 Assembly Syntax Definition (AT&T/GAS)
 
 Sublime Text syntax defn. for x86 assembly (GAS)
 
-It is designed to cover instructions and considerations for i386. Others were ignored.
+Covers a lot of instructions for a lot of different cpuid flags, even if it you don't have them.
 
-Purpose:  I couldn't find any (good ones) online, so I made one myself for my ECE391 class at UIUC.  Everything I found was NASM, FASM, Intel, or just garbage. This is not to say that this definition is perfect, but for the purposes of your college level systems programming class, it will do just fine.
+Purpose:  I couldn't find any (good ones) online, so I made one myself for my ECE391 class at UIUC.  Everything I found was NASM, FASM, Intel, or just plain no good. This is not to say that this definition is perfect, but for the purposes of your college level systems programming class, it will do just fine. I believe a good test for efficacy would be testing it on a gdb disas.
+
+I have included some test files in the 'test' directory. Please give it a look.
 
 Installation (Any platform):
 - Get sublime_text.
@@ -19,7 +21,7 @@ Installation (Any platform):
 
 If you wish to make edits to the definition yourself:
 - Install package AAAPackageDev via Preferences>Package Control.
-- To edit, you can open "Assembly x86 AT&T.JSON-tmLanguage," or edit the "Assembly x86 AT&T.tmLanguage" file directly. The JSON is probably easier to look at.
+- To edit, you can open ".JSON-tmLanguage," or edit the ".tmLanguage" file directly. The JSON is probably easier to look at.
 - If you chose to edit the JSON, press F7 after saving and generate as Property List.
 - Of course, I would appreciate pull requests.
 
