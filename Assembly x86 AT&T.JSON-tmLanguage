@@ -2,7 +2,7 @@
     "patterns": [
         {
             "name": "entity.name.function.instructions", 
-            "match": "\\b(?i:aa[adms]\\b|adc|x?add|addr(16|32)\\b|and|arpl\\b|bound[wl]?\\b|bs[fr]\\b|bswap[lq]?\\b|bt[crs]?\\b|call\\b|cbt?w\\b|cdqe\\b|cdo\\b|clc\\b|cld\\b|clflush|cli\\b|cltd[dqw]?\\b|clts\\b|cmc\\b|cmov(n?[abgl]e?|n?[ceosz]|np|p[eo]?)[lqw]?\\b|cmp|cmps[dq]?\\b|cmpxchg|cmpxchg(8|16)b\\b|cpuid\\b|c[lw]td|cwde?|cqo\\b|daa\\b|das\\b|dec|div|enter\\b|esc|hlt\\b|idiv|imul|in|inc|insd?|int3?\\b|into\\b|invd\\b|invlpg\\b|iret[dfq]?\\b|j(n?[abgl]e?|n?[ceosz]|np|p[eo]?)\\b|jmp\\b|j[er]?cxz\\b|[ls]ahf\\b|lar\\b|lcall\\b|l[de]s\\b|lea|leave\\b|l[defgs]s\\b|[ls][gil]dt\\b|ljmp\\b|lmsw\\b|loadall|lock\\b|lods[bdlq]?\\b|loopn?[ez][dw]\\b|lret\\b|lsl\\b|ltr\\b|mov([sz](b[lw]|w[lq]|[bl]q))?\\b|movsxd|mov[sz]x|mul|neg|nop\\b|not|x?or|out|outsd?\\b|pop|popa|pop[af]d\\b|popf[lq]?\\b|push|pushal?\\b|push[af]d\\b|pushf[lq]?\\b|rc[lr]|(rd|wr)msr\\b|rdtscp?\\b|repn?[ez]|retf?|ro[lr]|rsm\\b|sa[lr]|sbb|scas[bdqw]?\\b|set(n?[abgl]e?|n?[ceosz]|np|p[eo]?)\\b|sh[lr]d?|smsw\\b|stc\\b|std\\b|sti\\b|stos[dq]?\\b|str\\b|sub|swapgs\\b|syscall\\b|sysret\\b|sysenter\\b|sysexit\\b|test|ud2\\b|ver[rw]|wait\\b|fwait|wbinvd\\b|xchg|xlatb?\\b)(?i:[bwlq])?\\b",
+            "match": "\\b(?i:aa[adms]\\b|adc|x?add|addr(16|32)\\b|and|arpl\\b|bound[wl]?\\b|bs[fr]\\b|bswap[lq]?\\b|bt[crs]?\\b|call\\b|cbt?w\\b|cdqe\\b|cdo\\b|clc\\b|cld\\b|clflush|cli\\b|cltd[dqw]?\\b|clts\\b|cmc\\b|cmov(n?[abgl]e?|n?[ceosz]|np|p[eo]?)[lqw]?\\b|cmp|cmps[dq]?\\b|cmpxchg|cmpxchg(8|16)b\\b|cpuid\\b|c[lw]td|cwde?|cqo\\b|daa\\b|das\\b|dec|div|enter\\b|esc|hlt\\b|idiv|imul|in|inc|insd?|int3?\\b|into\\b|invd\\b|invlpg\\b|iret[dfq]?\\b|j(n?[abgl]e?|n?[ceosz]|np|p[eo]?)\\b|jmp\\b|j[er]?cxz\\b|[ls]ahf\\b|lar\\b|lcall\\b|l[de]s\\b|lea|leave\\b|l[defgs]s\\b|[ls][gil]dt\\b|ljmp\\b|lmsw\\b|loadall|lock\\b|lods[bdlq]?\\b|loopn?[ez][dw]\\b|lret\\b|lsl\\b|ltr\\b|mov([sz]?(b[lw]?|w[lq]|[bl]?q))?\\b|movsxd|mov[sz]x|mul|neg|nop\\b|not|x?or|out|outsd?\\b|pop|popa|pop[af]d\\b|popf[lq]?\\b|push|pushal?\\b|push[af]d\\b|pushf[lq]?\\b|rc[lr]|(rd|wr)msr\\b|rdtscp?\\b|repn?[ez]|retf?|ro[lr]|rsm\\b|sa[lr]|sbb|scas[bdqw]?\\b|set(n?[abgl]e?|n?[ceosz]|np|p[eo]?)\\b|sh[lr]d?|smsw\\b|stc\\b|std\\b|sti\\b|stos[dq]?\\b|str\\b|sub|swapgs\\b|syscall\\b|sysret\\b|sysenter\\b|sysexit\\b|test|ud2\\b|ver[rw]|wait\\b|fwait|wbinvd\\b|xchg|xlatb?\\b)(?i:[bwlq])?\\b",
             "comment" : "I may organize these later based on processor additions."
         }, 
         {  "name": "entity.name.function.mmx_instructions",
@@ -104,12 +104,13 @@
           "match": "((?<!\\w)([A-Za-z$_.0-9]|C-[BA])+[:])",
           "comment": "Assembly label/symbols."
         },
-        { "name": "support.constant.subsection.assembly",
-          "match": "(?<!\\w)(\\.(app-file|arch|asci[iz]|b?align|bundle_(align_mode|(un)?lock)|byte|cfi_(sections|startproc|endproc|personality|code(16(gcc)?|32)|lsda|def_cfa|def_cfa_register|def_cfa_offset|adjust_cfa_offset|offset|rel_offset|register|restore|undefined|same_value|remember_state|return_column|signal_frame|window_save|escape|val_encoded_addr|(start|end)proc)|data|def|desc|dim|double|eject|else(if)?|end([ei]f|func|[mr])?|exitm|equ(iv)?|eqv|err(or)?|extern|fail|file|fill|float|globa?l|hidden|hword|ident|if|incbin|include|int(ernal)?|irpc?|l?comm|lflags|linkonce|loc(_mark_blocks)?|mri|(no)?list|long|macro|(no)?altmacro|octa|org|p2align[wl]?|popsection|previous|print|protected|p?size|purgem|pushsection|quad|rept|sbttl|scl|section|set|short|single|skip|sleb128|space|stab[dns]|string(8|16|32|64)?|struct|subsection|symver|tag|text|title|type|uleb128|val|version|vtable_(entry|inherit)|warning|weak(ref)?|word|att_syntax(\\s*(no)?prefix)?)\\b)",
-          "comment": "Pseudo-ops, directives, or subsection markers"
-        },
         {  "name": "invalid.directives",
-           "match": "(?<!\\w)\\.(abort|ABORT|line|ln|intel_syntax(\\s*(no)?prefix)?)\\b"
+           "match": "(?<!\\w)\\.(abort|ABORT|line|ln|intel_syntax(\\s*(no)?prefix)?|att_syntax\\s*noprefix)\\b",
+           "comment" : "You probably won't be using these anyway... but still. Good to have reminders, I guess?"
+        },
+        { "name": "support.constant.subsection.assembly",
+          "match": "(?<!\\w)(\\.(app-file|arch|asci[iz]|b?align|bundle_(align_mode|(un)?lock)|byte|cfi_(sections|startproc|endproc|personality|code(16(gcc)?|32)|lsda|def_cfa|def_cfa_register|def_cfa_offset|adjust_cfa_offset|offset|rel_offset|register|restore|undefined|same_value|remember_state|return_column|signal_frame|window_save|escape|val_encoded_addr|(start|end)proc)|data|def|desc|dim|double|eject|else(if)?|end([ei]f|func|[mr])?|exitm|equ(iv)?|eqv|err(or)?|extern|fail|file|fill|float|globa?l|hidden|hword|ident|if|incbin|include|int(ernal)?|irpc?|l?comm|lflags|linkonce|loc(_mark_blocks)?|mri|(no)?list|long|macro|(no)?altmacro|octa|org|p2align[wl]?|popsection|previous|print|protected|p?size|purgem|pushsection|quad|rept|sbttl|scl|section|set|short|single|skip|sleb128|space|stab[dns]|string(8|16|32|64)?|struct|subsection|symver|tag|text|title|type|uleb128|val|version|vtable_(entry|inherit)|warning|weak(ref)?|word|att_syntax(\\s*prefix)?)\\b)",
+          "comment": "Pseudo-ops, directives, or subsection markers"
         }
     ], 
     "uuid": "245288b9-8026-4e7f-8b27-d4ff081a25bf", 
