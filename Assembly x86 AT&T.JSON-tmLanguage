@@ -2,36 +2,98 @@
     "patterns": [
         {
             "name": "entity.name.function.instructions", 
-            "match": "\\b(?i:aa[adms]\\b|adc|x?add|addr(16|32)\\b|and|arpl\\b|bound[wl]?\\b|bs[fr]\\b|bswap[lq]?\\b|bt[crs]?\\b|call\\b|cbt?w\\b|cdqe\\b|cdo\\b|clc\\b|cld\\b|clflush|cli\\b|cltd[dqw]?\\b|clts\\b|cmc\\b|cmov(n?[abgl]e?|n?[ceosz]|np|p[eo]?)[lqw]?\\b|cmp|cmps[dq]?\\b|cmpxchg|cmpxchg(8|16)b\\b|cpuid\\b|c[lw]td|cwde?|cqo\\b|daa\\b|das\\b|dec|div|enter\\b|esc|hlt\\b|idiv|imul|in|inc|insd?|int3?\\b|into\\b|invd\\b|invlpg\\b|iret[dfq]?\\b|j(n?[abgl]e?|n?[ceosz]|np|p[eo]?)\\b|jmp\\b|j[er]?cxz\\b|[ls]ahf\\b|lar\\b|lcall\\b|l[de]s\\b|lea|leave\\b|l[defgs]s\\b|[ls][gil]dt\\b|ljmp\\b|lmsw\\b|loadall|lock\\b|lods[bdlq]?\\b|loopn?[ez][dw]\\b|lret\\b|lsl\\b|ltr\\b|mov([sz]?(b[lw]?|w[lq]|[bl]?q))?\\b|movsxd|mov[sz]x|mul|neg|nop\\b|not|x?or|out|outsd?\\b|pop|popa|pop[af]d\\b|popf[lq]?\\b|push|pushal?\\b|push[af]d\\b|pushf[lq]?\\b|rc[lr]|(rd|wr)msr\\b|rdtscp?\\b|repn?[ez]|retf?|ro[lr]|rsm\\b|sa[lr]|sbb|scas[bdqw]?\\b|set(n?[abgl]e?|n?[ceosz]|np|p[eo]?)\\b|sh[lr]d?|smsw\\b|stc\\b|std\\b|sti\\b|stos[dq]?\\b|str\\b|sub|swapgs\\b|syscall\\b|sysret\\b|sysenter\\b|sysexit\\b|test|ud2\\b|ver[rw]|wait\\b|fwait|wbinvd\\b|xchg|xlatb?\\b)(?i:[bwlq])?\\b",
+            "match": "\\b(?i:aa[adms]|adc[bwlq]?|x?add[bwlq]?|addr(16|32)|and[bwlq]?|arpl|bound[wl]?|bs[fr][wlq]?|bswap[lq]?|bt[crs]?[wlq]?|call[wlq]?|cbt?w|cdqe?|cdo|clc|cld|clflush|cli|cltd[dqw]?|clts|cmc|cmov(n?[abgl]e?|n?[ceosz]|np|p[eo]?)?[lqw]?|cmp[bwlq]?|cmps[bwdq]?|cmpxchg[bwlq]?|cmpxchg(8|16)b|cpuid|c[lw]td[bwlq]?|cwde?[bwlq]?|cqo|daa|das|dec[bwlq]?|div[bwlq]?|enter|esc|hlt|idiv[bwlq]?|imul[bwlq]?|in[bwlq]?|inc[bwlq]?|insd?[bwlq]?|int(\\s*3|o)?|inv(d|pcid)?|invlpg|iret[dfq]?|j(n?[abgl]e?|n?[ceosz]|np|p[eo]?)|jmp|j[er]?cxz|[ls]ahf|lar|lcall|l[de]s|lea[bwlq]?|leave|l[defgs]s|[ls][gil]dt|ljmp|lmsw|loadall|lock|lods[bwdq]?|loop(n?[ez][dw]?)?|lret|lsl|ltr|mov([sz]?(b[lwe]?|w[lq]|[bl]?q|[dlwq])?)?|movs(xd|w)|mov[sz]x|mul[bwlq]?|neg[bwlq]?|nop|not[bwlq]?|x?or[bwlq]?|out[bwlq]?|outs[bdw]?|pop[bwlq]?|popal?|pop[af]d|popf[lq]?|push[bwlq]?|pushal?|push[af]d|pushf[lq]?|rc[lr][bwlq]?|(rd|wr)msr|rdtscp?|rep(n?[ez])?|retf?|ro[lr][bwlq]?|rsm|sa[lr][bwlq]?|sbb[bwlq]?|scas[bdqw]?|set(n?[abgl]e?|n?[ceosz]|np|p[eo]?)|sh[lr]d?[bwlq]?|smsw|stc|std|sti|stos[bdqw]?|str|sub[bwlq]?|swapgs|syscall|sysret|sysenter|sysexit|test[bwlq]?|ud2|ver[rw]|f?wait|wbinvd|xchg[bwlq]?|x[gs]etbv|xlatb?|xsave[cs]?(64)?|xrstors?(64)?)\\b",
             "comment" : "I may organize these later based on processor additions."
         }, 
         {  "name": "entity.name.function.mmx_instructions",
            "match": "\\b(?i:emms|mov[dq]|pack(ssdw|[us]swb)|padd([bdw]|u?s[bw])|pandn?|pcmp(eq|gt)[bdw]|pmaddwd|pmul[hl]w|psll[dqw]|psr(a[dw]|l[dqw])|psub([bdw]|u?s[bw])|punpck[hl](bw|dq|wd)|px?or|rdpmc)\\b",
-           "comment": "Didn't know about these before..."
+           "comment": "cpuid | grep -i mmx"
         },
         {  "name": "entity.name.function.sse",
-           "match": "\\b(?i:maskmovq|movntps|movntq|prefetch[012]|prefetchnta|sfence)\\b"
+           "match": "\\b(?i:maskmovq|movntps|movntq|prefetcht[012]|prefetchnta|sfence)\\b",
+           "comment": "cpuid | grep -i 'sse ext'"
         },
         {  "name": "entity.name.function.sse_simd",
-           "match": "\\b(?i:add[sp]s|cmp[ps]s|u?comiss|cvt(p(i2ps|s2pi)|s(i2ss|s2si)|t(ps2pi|ss2si))|div[ps]s|ldmxcsr|(max|min)[ps]s|mov(a|hl?|lh?|msk|nt)ps|mov(s|up)s|mul[ps]s|rcp[ps]s|r?sqrt[ps]s|shufps|stmxcsr|sub[ps]s|unpck[hl]ps|andn?ps|x?orps|pavg[bw]|pextrw|pminsrw|p(max|min)(sw|ub)|pmovmskb|pmulhuw|psadbw|pshufw)\\b"
+           "match": "\\b(?i:add[sp]s|cmp[ps]s|u?comiss|cvt(p(i2ps|s2pi)|s(i2ss|s2si)|t(ps2pi|ss2si))|div[ps]s|ldmxcsr|(max|min)[ps]s|mov(a|hl?|lh?|msk|nt)ps|v?mov(s|up)s|mul[ps]s|rcp[ps]s|r?sqrt[ps]s|shufps|stmxcsr|sub[ps]s|unpck[hl]ps|andn?ps|x?orps|pavg[bw]|pextrw|pminsrw|p(max|min)(sw|ub)|pmovmskb|pmulhuw|psadbw|pshufw)\\b",
+           "comment": "cpuid | grep -i 'sse ext'"
         },
         {  "name": "entity.name.function.sse2",
-           "match": "\\b(?i:clflush|[lm]fence|maskmovdqu|movnt(dq|i|pd)|pause)\\b"
+           "match": "\\b(?i:clflush|[lm]fence|maskmovdqu|v?movnt(dq|i|pd)|pause)\\b",
+           "comment": "cpuid | grep -i 'sse2'"
         },
         {  "name": "entity.name.function.sse2_simd",
-           "match": "\\b(?i:add[ps]d|andn?pd|cmp[ps]d|u?comisd|cvtdq2p[ds]|cvtt?pd2(dq|pi)|cvtpd2ps|cvtp[is]2pd|cvtt?ps2dq|cvtt?sd2s[is]|cvts[is]2sd|div[ps]d|(max|min)[ps]d|mov[ahlu]pd|movmskpd|mul[ps]d|x?orpd|shufpd|sqrt[ps]d|sub[ps]d|unpck[hl]pd|unpcklpd|movdq(2q|[au])|movq2dq|paddq|psubq|pmuludq|pshuf([hl]w|d)|ps[lr]ldq|punpck[hl]qdq)\\b"
+           "match": "\\b(?i:v?add[ps][ds]|andn?pd|bzhi[wl]?|cmp[ps]d|u?comisd|cvtdq2p[ds]|cvtt?pd2(dq|pi)|cvtpd2ps|cvtp[is]2pd|cvtt?ps2dq|cvtt?sd2s[is]|cvts[is]2sd|div[ps][ds]|v?(max|min)[ps][ds]|v?mov[ahlu]pd|v?movmskpd|v?mul[ps]d|x?orpd|shufpd|sqrt[ps]d|sub[ps]d|unpck[hl]pd|unpcklpd|movdq(2q|[au])|movq2dq|paddq|psubq|pmuludq|pshuf([hl]w|d)|ps[lr]ldq|punpck[hl]qdq)\\b",
+           "comment": "cpuid | grep -i 'sse2'"
         },
         {  "name": "entity.name.function.sse3",
-           "match": "\\b(lddqu|monitor|mwait)\\b"
+           "match": "\\b(?i:lddqu|monitor|mwait)\\b",
+           "comment" : "cpuid | grep -i 'pni/sse3'"
         },
         {  "name": "entity.name.function.xsse3_simd",
-           "match": "\\b(?i:addsubp[ds]|haddp[ds]|hsubp[ds]|mov(d|s[hl])dup|psign[bdw]|pshufb|pmulhrsw|pmaddubsw|phsub(s?w|d)|phadd(s?w|d)|palignr|pabs[bdw])\\b"
+           "match": "\\b(?i:addsubp[ds]|haddp[ds]|hsubp[ds]|v?mov(d|s[hl])dup|psign[bdw]|pshufb|pmulhrsw|pmaddubsw|phsub(s?w|d)|phadd(s?w|d)|palignr|pabs[bdw])\\b",
+           "comment" : "cpuid | grep -i 'ssse3'"
         },
         {  "name": "entity.name.function.sse4_simd",
-           "match": "\\b(?i:mpsadbw|phminposuw|pmul(ld|dq)|dpp[ds]|blendv?p[ds]|pblendvb|pblendw|p(max|min)(s[bd]|u[wd])|roundp[ds]|rounds[ds]|insertps|pinsr[bdq]|extractps|pextr[bdq]|pmov[sz]xb[dwq]|pmov[sz]xw[dq]|pmov[sz]xdq|ptest|pcmpeqq|packusdw|movntdqa|lzcnt|popcnt|extrq|insertq|movnts[ds]|crc32|pcmp[ei]str[im]|pcmpgtq)\\b"
+           "match": "\\b(?i:v?mpsadbw|phminposuw|pmul(ld|dq)|dpp[ds]|blendv?p[ds]|pblendvb|pblendw|p(max|min)(s[bd]|u[wd])|roundp[ds]|rounds[ds]|insertps|pinsr[bwdq]|extractps|pextr[bdq]|pmov[sz]xb[dwq]|pmov[sz]xw[dq]|pmov[sz]xdq|pmov[sz]x|ptest|pcmpeqq|packusdw|v?movntdqa|lzcnt|popcnt|extrq|insertq|movnts[ds]|crc32|pcmp[ei]str[im]|pcmpgtq)\\b",
+           "comment" : "cpuid | grep -i 'sse4'"
+           // I combined sse4.1 and 2 instructions here. Don't kill me.
         },
         {  "name": "entity.name.function.fpu_x87",
-           "match": "\\b(?i:f(2xm1|abs|addp?|bld|b?stp|chs|n?clex|u?comp{0,2}|decstp|n?disi|div(p|rp?)?|n?eni|free(p| ST)?|iadd|icomp?|idivr?|ild|imul|incstp|n?init|ist(p|tp)?|isubr?|ld1?|ldcw|ldenv[dw]?|ldl2[et]|ldl[gn]2|ldpi|ldz|mulp?|nop|n?stenv[wd]?|n?stsw|pa?tan|prem1?|rndint|rstor[dw]?|n?savew?|scale|sqrt|st|n?stcw|sub(p|rp?)?|tst|wait|xam|xch|xtract|yl2x(p1)?|setpm|cos|saved|sin(cos)?|cmovn?b?e?|cmovn?u|u?comip?|xrstor|xsave))\\b"
+           "match": "\\b(?i:f(2xm1|abs|addp?|bld|b?stp|chs|n?clex|u?comp{0,2}|decstp|n?disi|div(p|rp?)?|n?eni|free(p| ST)?|iadd|icomp?|idivr?|ild|imul|incstp|n?init|ist(p|tp)?|isubr?|ld1?|ldcw|ldenv[dw]?|ldl2[et]|ldl[gn]2|ldpi|ldz|mulp?|nop|n?stenv[wd]?|n?stsw|pa?tan|prem1?|rndint|rstor[dw]?|n?savew?|scale|sqrt|st|n?stcw|sub(p|rp?)?|tst|wait|xam|xch|xtract|yl2x(p1)?|setpm|cos|saved|sin(cos)?|cmovn?b?e?|cmovn?u|u?comip?|xrstor|xsave))\\b",
+           "comment" : "cpuid | grep -i x87"
+        },
+        {  "name": "entity.name.function.aes_functions",
+           "match": "\\b(?i:aes(en|de)c(last)?|aeskeygenassist|aesimc)\\b",
+           "comment" : "cpuid | grep -i aes"
+        },
+        {  "name": "entity.name.function.bmi1",
+           "match": "\\b(?i:andn[lq]?|bextr[lq]?|blsi[lq]?|blsmsk[lq]?|blsr[dlq]?|tzcnt[wlq]?)\\b",
+           "comment" : "cpuid | grep -i 'bmi i'"
+        },
+        {  "name": "entity.name.function.bmi2",
+           "match": "\\b(?i:mulx[lq]?|pdep[lq]?|pext[lq]?|rorx[lq]?|s(h[lr]|ar)x)\\b",
+           "comment" : "cpuid | grep -i 'bmi2'"
+        },
+        {
+            "name": "entity.name.function.clmul",
+            "match": "\\b(?i:pclmulqdq)\\b",
+            "comment" : "cpuid | grep -i 'clmul'"
+        },
+        {  "name": "entity.name.function.prefetchw",
+           "match": "\\b(?i:prefetchw)\\b",
+           "comment": "cpuid | grep -i 'prefetchw'"
+        },
+        {  "name": "entity.name.function.fsgsbase",
+           "match": "\\b(?i:(rd|wr)[fg]sbase)\\b",
+           "comment": "cpuid | grep -i 'fsgs'"
+        },
+        {  "name": "entity.name.function.rdrand",
+           "match": "\\b(?i:rdrand)\\b",
+           "comment": "cpuid | grep -i 'rdrand'"
+        },
+        {  "name": "entity.name.function.AVXx",
+           "match": "\\b(?i:vp?broadcast(s[sd]|f128)?|v(extract|insert|perm2)[if]128|vgather[dq]p[ds]|vp?maskmov|vpblendd|vperm([dq]|(il)?p[sd])|vpgather[dq]{1,2}|vpsllv[dq]|vpsr(avd|lv[qd])|vtestp[ds]|vzero(all|upper))\\b",
+           "comment": "cpuid | grep -i 'avx'"
+        },
+        {  "name": "entity.name.function.F16c",
+           "match": "\\b(?i:vcvt(ph2ps|ps2ph))\\b",
+           "comment": "cpuid | grep -i 'f16c'"
+        },
+        {  "name": "entity.name.function.FMA",
+           "match": "\\b(?i:vfn?m((add(sub)?|sub(add)?)((132|213|231)[ps][ds])))\\b",
+           "comment": "cpuid | grep -i 'fma'"
+        },
+        {  "name": "entity.name.function.RTM",
+           "match": "\\b(?i:x(abort|begin|end|test))\\b",
+           "comment": "cpuid | grep -i 'rtm'"
+        },
+        {  "name": "entity.name.function.HLE",
+           "match": "\\b(?i:x(acquire|release|test))\\b",
+           "comment": "cpuid | grep -i 'HLE'"
+        },
+        {  "name": "entity.name.function.xsave",
+           "match": "\\b(?i:xsaveopt(64)?)\\b",
+           "comment":"cpuid | grep -i 'xsaveopt'"
         },
         {  "name": "support.constant.preprocessor",
            "match": "(?<!\\w)(#(#|include|define|undef|if|ifn?def|else|elsif|endif|pragma|warning))|__(FILE|LINE|DATE|TIME(STAMP)?|STDC_(VERSION|HOSTED)?|GNUC|GNUC_MINOR|GNUC_PATCHLEVEL|VERSION|STRICT_ANSI|BASE_FILE|INCLUDE_LEVEL|OPTIMIZE|OPTIMIZE_SIZE|NO_INLINE|CHAR_UNSIGNED|CHAR_BIT|INT_SHORT|SCHAR_MAX|SHRT_MAX|INT_MAX|LONG_MAX|LONG_LONG_MAX|REGISTER_PREFIX|USER_LABEL_PREFIX)__\\b"
