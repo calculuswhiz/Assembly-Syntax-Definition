@@ -87,7 +87,7 @@
 			<key>comment</key>
 			<string>cpuid | grep -i x87</string>
 			<key>match</key>
-			<string>\b(?i:f(2xm1|abs|addp?|bld|b?stp|chs|n?clex|u?comp{0,2}|decstp|n?disi|div(p|rp?)?|n?eni|free(p| ST)?|iadd|icomp?|idivr?|ild|imul|incstp|n?init|ist(p|tp)?|isubr?|ld1?|ldcw|ldenv[dw]?|ldl2[et]|ldl[gn]2|ldpi|ldz|mulp?|nop|n?stenv[wd]?|n?stsw|pa?tan|prem1?|rndint|rstor[dw]?|n?savew?|scale|sqrt|st|n?stcw|sub(p|rp?)?|tst|wait|xam|xch|xtract|yl2x(p1)?|setpm|cos|saved|sin(cos)?|cmovn?b?e?|cmovn?u|u?comip?|xrstor|xsave))\b</string>
+			<string>\b(?i:f(2xm1|abs|addp?|bld|b?stp|chs|n?clex|u?comp{0,2}|decstp|n?disi|div(p|rp?)?|n?eni|free(p|\s*ST)?|iadd|icomp?|idivr?|ildl?|imul|incstp|n?init|ist((pl?|l)|tp)?|isubr?|ld[1slt]?|ldcw|ldenv[dw]?|ldl2[et]|ldl[gn]2|ldpi|ldz|mulp?|nop|n?stenv[wd]?|n?stsw|pa?tan|prem1?|rndint|rstor[dw]?|n?savew?|scale|sqrt|st(p?[slt])|n?stcw|sub(p|rp?)?|tst|wait|xam|xch|xtract|yl2x(p1)?|setpm|cos|saved|sin(cos)?|cmovn?b?e?|cmovn?u|u?comip?|xrstor|xsave))\b</string>
 			<key>name</key>
 			<string>entity.name.function.fpu_x87</string>
 		</dict>
