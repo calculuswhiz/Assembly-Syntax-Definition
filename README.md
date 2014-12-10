@@ -14,9 +14,11 @@ I have included some test files in the 'test/' directory of this package. Please
 Installation (Any platform):
 - Get sublime_text.
 - Install "Package Control" : https://sublime.wbond.net/installation#st2
+
 Recommended method (via package control):
 - Preferences>Package Control>Install and type "gasx86" to find it.
 - This has the advantage of automatic updates if a bug is caught.
+
 Masochistic method (manual install):
 - Download the contents of this repo.
 - Extract/copy/Whatever-I-Don't-Care all files into your 'Packages' directory.
