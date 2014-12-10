@@ -1,0 +1,2 @@
+[x86 Highlighting scheme - v1.0.1 Changelog]
+    Finally moved this to Package Control so people would whine about one less thing. Look, guys. It's not that hard to install Package Control. Google it! Geez.
