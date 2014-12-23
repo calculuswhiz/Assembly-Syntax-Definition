@@ -2,9 +2,17 @@
     "patterns": [
         {
             "name": "entity.name.function.instructions", 
-            "match": "\\b(?i:aa[adms]|adc[bwlq]?|x?add[bwlq]?|addr(16|32)|and[bwlq]?|arpl|bound[wl]?|bs[fr][wlq]?|bswap[lq]?|bt[crs]?[wlq]?|call[wlq]?|cbt?w|cdqe?|cdo|clc|cld|clflush|cli|cltd[dqw]?|clts|cmc|cmov(n?[abgl]e?|n?[ceosz]|np|p[eo]?)?[lqw]?|cmp[bwlq]?|cmps[bwdq]?|cmpxchg[bwlq]?|cmpxchg(8|16)b|cpuid|c[lw]td[bwlq]?|cwde?[bwlq]?|cqo|daa|das|dec[bwlq]?|div[bwlq]?|enter|esc|hlt|idiv[bwlq]?|imul[bwlq]?|in[bwlq]?|inc[bwlq]?|insd?[bwlq]?|int(\\s*3|o)?|inv(d|pcid)?|invlpg|iret[dfq]?|j(n?[abgl]e?|n?[ceosz]|np|p[eo]?)|jmp|j[er]?cxz|[ls]ahf|lar|lcall|l[de]s|lea[bwlq]?|leave|l[defgs]s|[ls][gil]dt|ljmp|lmsw|loadall|lock|lods[bwdq]?|loop(n?[ez][dw]?)?|lret|lsl|ltr|mov([sz]?(b[lwe]?|w[lq]|[bl]?q|[dlwq])?)?|movs(xd|w)|mov[sz]x|mul[bwlq]?|neg[bwlq]?|nop|not[bwlq]?|x?or[bwlq]?|out[bwlq]?|outs[bdw]?|pop[bwlq]?|popal?|pop[af]d|popf[lq]?|push[bwlq]?|pushal?|push[af]d|pushf[lq]?|rc[lr][bwlq]?|(rd|wr)msr|rdtscp?|rep(n?[ez])?|retf?|ro[lr][bwlq]?|rsm|sa[lr][bwlq]?|sbb[bwlq]?|scas[bdqw]?|set(n?[abgl]e?|n?[ceosz]|np|p[eo]?)|sh[lr]d?[bwlq]?|smsw|stc|std|sti|stos[bdqw]?|str|sub[bwlq]?|swapgs|syscall|sysret|sysenter|sysexit|test[bwlq]?|ud2|ver[rw]|f?wait|wbinvd|xchg[bwlq]?|x[gs]etbv|xlatb?|xsave[cs]?(64)?|xrstors?(64)?)\\b",
+            "match": "\\b(?i:aa[adms]|adc[bwlq]?|x?add[bwlq]?|and[bwlq]?|arpl|bound[wl]?|bs[fr][wlq]?|bswap[lq]?|bt[crs]?[wlq]?|call[wlq]?|clc|cld|cli|cltd[dqw]?|clts|cmc|cmov(n?[abgl]e?|n?[ceosz]|np|p[eo]?)?[lqw]?|cmp[bwlq]?|cmps[bwdq]?|cmpxchg[bwlq]?|cmpxchg(8|16)b|cpuid|c[lw]td[bwlq]?|daa|das|dec[bwlq]?|div[bwlq]?|enter|esc|hlt|idiv[bwlq]?|imul[bwlq]?|in[bwlq]?|inc[bwlq]?|insd?[bwlq]?|int(\\s*3|o)?|inv(d|pcid)?|invlpg|iret[dfq]?|j(n?[abgl]e?|n?[ceosz]|np|p[eo]?)|jmp|j[er]?cxz|[ls]ahf|lar|lcall|l[de]s|lea[bwlq]?|leave|l[defgs]s|[ls][gil]dt|ljmp|lmsw|loadall|lods[bwdq]?|loop(n?[ez][dw]?)?|lret|lsl|ltr|mov((s?(b[lwq]?|w[lq]?|lq?|q)?)|(z?(b[lwq]|w[lq]|l|q)))?|movd|movs(xd|w)|mov[sz]x|mul[bwlq]?|neg[bwlq]?|nop|not[bwlq]?|x?or[bwlq]?|out[bwlq]?|outs[bdw]?|pop[bwlq]?|popal?|pop[af]d|popf[lq]?|push[bwlq]?|pushal?|push[af]d|pushf[lq]?|rc[lr][bwlq]?|(rd|wr)msr|rdtscp?|retf?|ro[lr][bwlq]?|rsm|sa[lr][bwlq]?|sbb[bwlq]?|scas[bdqw]?|set(n?[abgl]e?|n?[ceosz]|np|p[eo]?)|sh[lr]d?[bwlq]?|smsw|stc|std|sti|stos[bdqw]?|str|sub[bwlq]?|swapgs|syscall|sysret|sysenter|sysexit|test[bwlq]?|ud2|ver[rw]|fwait|wbinvd|xchg[bwlq]?|x[gs]etbv|xlatb?|xsave[cs]?(64)?|xrstors?(64)?)\\b",
             "comment" : "I may organize these later based on processor additions."
         }, 
+        {  "name": "entity.name.function.conversion.instructions",
+           "match": "\\b(?i:cbw|cdqe?|cwde?|cdo|cqo|cbtw|cwt[ld]|clt[dq]|cqto)\\b",
+           "comment": "Data type conversions. Apparently the Intel ones work too. I tried it."
+        },
+        {  "name": "keyword.name.function.prefixes",
+           "match": "\\b(?i:rep(n?[ez])?|[c-gs]s|(addr|data)(16|32)|lock|wait|rex(64xyz)?)\\b",
+           "comment": "Not really instructions."
+        },
         {  "name": "entity.name.function.mmx_instructions",
            "match": "\\b(?i:emms|mov[dq]|pack(ssdw|[us]swb)|padd([bdw]|u?s[bw])|pandn?|pcmp(eq|gt)[bdw]|pmaddwd|pmul[hl]w|psll[dqw]|psr(a[dw]|l[dqw])|psub([bdw]|u?s[bw])|punpck[hl](bw|dq|wd)|px?or|rdpmc)\\b",
            "comment": "cpuid | grep -i mmx"
@@ -153,7 +161,7 @@
         },
         {
             "name": "string.quoted",
-            "match": "[\"<].*?[\">]"
+            "match": "(\".*?\"|<.*?>)"
         },
         {
             "name": "variable.parameter.registers", 
@@ -165,6 +173,9 @@
         { "name": "keyword.label.assembly",
           "match": "((?<!\\w)([A-Za-z$_.0-9]|C-[BA])+[:])",
           "comment": "Assembly label/symbols."
+        },
+        {  "name": "invalid.instructions",
+           "match": "\\b(movz(lq)?)\\b"
         },
         {  "name": "invalid.directives",
            "match": "(?<!\\w)\\.(abort|ABORT|line|ln|intel_syntax(\\s*(no)?prefix)?|att_syntax\\s*noprefix)\\b",
