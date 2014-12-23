@@ -1,0 +1,2 @@
+[x86 Highlighting scheme - v1.0.2 Changelog]
+	 Fixed bug with `movz...'. Organized some instructions.
