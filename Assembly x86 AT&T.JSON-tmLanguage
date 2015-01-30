@@ -175,15 +175,23 @@
           "comment": "Assembly label/symbols."
         },
         {  "name": "invalid.instructions",
-           "match": "\\b(movz(lq)?)\\b"
+           "match": "\\b(?i:movz(lq)?)\\b"
         },
         {  "name": "invalid.directives",
-           "match": "(?<!\\w)\\.(abort|ABORT|line|ln|intel_syntax(\\s*(no)?prefix)?|att_syntax\\s*noprefix)\\b",
+           "match": "(?<!\\w)\\.(?i:abort|line|ln|intel_syntax(\\s*(no)?prefix)?|att_syntax\\s*noprefix)\\b",
            "comment" : "You probably won't be using these anyway... but still. Good to have reminders, I guess?"
         },
-        { "name": "support.constant.subsection.assembly",
-          "match": "(?<!\\w)(\\.(app-file|arch|asci[iz]|b?align|bundle_(align_mode|(un)?lock)|byte|cfi_(sections|startproc|endproc|personality|code(16(gcc)?|32)|lsda|def_cfa|def_cfa_register|def_cfa_offset|adjust_cfa_offset|offset|rel_offset|register|restore|undefined|same_value|remember_state|return_column|signal_frame|window_save|escape|val_encoded_addr|(start|end)proc)|data|def|desc|dim|double|eject|else(if)?|end([ei]f|func|[mr])?|exitm|equ(iv)?|eqv|err(or)?|extern|fail|file|fill|float|globa?l|hidden|hword|ident|if|incbin|include|int(ernal)?|irpc?|l?comm|lflags|linkonce|loc(_mark_blocks)?|mri|(no)?list|long|macro|(no)?altmacro|octa|org|p2align[wl]?|popsection|previous|print|protected|p?size|purgem|pushsection|quad|rept|sbttl|scl|section|set|short|single|skip|sleb128|space|stab[dns]|string(8|16|32|64)?|struct|subsection|symver|tag|text|title|type|uleb128|val|version|vtable_(entry|inherit)|warning|weak(ref)?|word|att_syntax(\\s*prefix)?)\\b)",
-          "comment": "Pseudo-ops, directives, or subsection markers"
+        { "name": "support.constant.subsections",
+          "match": "(?<!\\w)(?i:\\.(app-file|arch|asci[iz]|b?align|bundle_(align_mode|(un)?lock)|byte|cfi_(sections|startproc|endproc|personality|code(16(gcc)?|32)|lsda|def_cfa|def_cfa_register|def_cfa_offset|adjust_cfa_offset|offset|rel_offset|register|restore|undefined|same_value|remember_state|return_column|signal_frame|window_save|escape|val_encoded_addr|(start|end)proc)|data|def|desc|dim|double|eject|else(if)?|end([ei]f|func|[mr])?|exitm|equ(iv)?|eqv|err(or)?|extern|fail|file|fill|float|globa?l|hidden|hword|ident|if|incbin|include|int(ernal)?|irpc?|l?comm|lflags|linkonce|loc(_mark_blocks)?|mri|(no)?list|long|macro|(no)?altmacro|octa|org|p2align[wl]?|popsection|previous|print|protected|p?size|purgem|pushsection|quad|rept|sbttl|scl|section|set|short|single|skip|sleb128|space|stab[dns]|string(8|16|32|64)?|struct|subsection|symver|tag|text|title|type|uleb128|val|version|vtable_(entry|inherit)|warning|weak(ref)?|word|att_syntax(\\s*prefix)?)\\b)",
+          "comment": "Pseudo-ops, directives, or subsection markers."
+        },
+        {  "name": "support.constant.alternatives",
+           "match": "\\b([A-Za-z$_.0-9]+)\\s*(==?)\\s*",
+           "captures": {
+               "0": { "name": "variable.parameter.symbol" },
+               "1": { "name": "keyword.operator.assignment"}
+           },
+           "comment": "Alternative ways of writing the .equ and .set directives."
         }
     ], 
     "uuid": "245288b9-8026-4e7f-8b27-d4ff081a25bf", 
