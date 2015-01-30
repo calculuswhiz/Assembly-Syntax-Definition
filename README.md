@@ -11,12 +11,12 @@ Purpose:  I couldn't find any (good ones) online, so I made one myself for my EC
 
 I have included some test files in the 'test/' directory of this package. Please give it a look. I even included a gdb disas.
 
-Installation (Any platform):
+**Installation (Any platform):**
 - Get sublime_text.
 - Install "Package Control" : https://sublime.wbond.net/installation#st2
-
-Recommended method (via package control):
-- Preferences>Package Control>Install and type "gasx86" to find it.
+    - Pay ye mind to the 2 or 3. Follow the directions closely! `` ` `` is a backtick, not an apostrophe.
+- In your sublime window menu, go to Preferences>Package Control and type "Install".
+- Type "gasx86" to find the package.
 - This has the advantage of automatic updates if a bug is caught.
 
 Masochistic method (manual install):
