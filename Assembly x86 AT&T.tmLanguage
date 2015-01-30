@@ -362,7 +362,7 @@
 				</dict>
 			</dict>
 			<key>comment</key>
-			<string>Alternative ways of writing the .equ and .set directives.</string>
+			<string>Alternative ways of writing the .set and .eqv directives.</string>
 			<key>match</key>
 			<string>\b([A-Za-z$_.0-9]+)\s*(==?)\s*</string>
 			<key>name</key>
