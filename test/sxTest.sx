@@ -1,0 +1,15 @@
+#define SYS_EXIT    $60
+
+.global _start
+.text
+
+_start:
+    /* Entry Point: */
+
+exit:
+    movq    SYS_EXIT, %rax
+    xorq    %rdi, %rdi              # The exit code.
+    syscall
+
+.data
+    /* Begin Data Section: */

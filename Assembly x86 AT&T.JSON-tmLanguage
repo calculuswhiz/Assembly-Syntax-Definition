@@ -197,7 +197,8 @@
     "uuid": "245288b9-8026-4e7f-8b27-d4ff081a25bf", 
     "fileTypes": [
         "s", 
-        "S"
+        "S",
+        "sx"
     ], 
     "name": "Assembly x86(_64) AT&T", 
     "scopeName": "source.s"

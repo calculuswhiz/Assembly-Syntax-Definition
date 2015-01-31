@@ -6,6 +6,7 @@
 	<array>
 		<string>s</string>
 		<string>S</string>
+		<string>sx</string>
 	</array>
 	<key>name</key>
 	<string>Assembly x86(_64) AT&amp;T</string>
