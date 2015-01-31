@@ -171,7 +171,7 @@
             // [roditszapc]f|vip|vif|ac|vm|nt|iopl|id| 
         },
         { "name": "keyword.label.assembly",
-          "match": "((?<!\\w)([A-Za-z$_.0-9]|C-[BA])+[:])",
+          "match": "((\\s+|^)([A-Za-z$_.0-9]|C-[BA])+[:])",
           "comment": "Assembly label/symbols."
         },
         {  "name": "invalid.instructions",
@@ -182,8 +182,14 @@
            "comment" : "You probably won't be using these anyway... but still. Good to have reminders, I guess?"
         },
         { "name": "support.constant.subsections",
-          "match": "(?<!\\w)(?i:\\.(app-file|arch|asci[iz]|b?align|bundle_(align_mode|(un)?lock)|byte|cfi_(sections|startproc|endproc|personality|code(16(gcc)?|32)|lsda|def_cfa|def_cfa_register|def_cfa_offset|adjust_cfa_offset|offset|rel_offset|register|restore|undefined|same_value|remember_state|return_column|signal_frame|window_save|escape|val_encoded_addr|(start|end)proc)|data|def|desc|dim|double|eject|else(if)?|end([ei]f|func|[mr])?|exitm|equ(iv)?|eqv|err(or)?|extern|fail|file|fill|float|globa?l|hidden|hword|ident|if|incbin|include|int(ernal)?|irpc?|l?comm|lflags|linkonce|loc(_mark_blocks)?|mri|(no)?list|long|macro|(no)?altmacro|octa|org|p2align[wl]?|popsection|previous|print|protected|p?size|purgem|pushsection|quad|rept|sbttl|scl|section|set|short|single|skip|sleb128|space|stab[dns]|string(8|16|32|64)?|struct|subsection|symver|tag|text|title|type|uleb128|val|version|vtable_(entry|inherit)|warning|weak(ref)?|word|att_syntax(\\s*prefix)?)\\b)",
+          "match": "(?<!\\w)(?i:\\.(app-file|asci[iz]|b?align|bundle_(align_mode|(un)?lock)|byte|cfi_(sections|startproc|endproc|personality|lsda|def_cfa|def_cfa_register|def_cfa_offset|adjust_cfa_offset|offset|rel_offset|register|restore|undefined|same_value|remember_state|return_column|signal_frame|window_save|escape|val_encoded_addr)|code(16(gcc)?|32|64)|data|def|desc|dim|double|eject|else(if)?|end([ei]f|func|[mr])?|exitm|equ(iv)?|eqv|err(or)?|extern|fail|file|fill|float|globa?l|hidden|hword|ident|if|incbin|include|int(ernal)?|irpc?|l?comm|lflags|linkonce|loc(_mark_blocks)?|mri|(no)?list|long|macro|(no)?altmacro|octa|org|p2align[wl]?|popsection|previous|print|protected|p?size|purgem|pushsection|quad|rept|sbttl|scl|section|set|short|single|skip|sleb128|space|stab[dns]|string(8|16|32|64)?|struct|subsection|symver|tag|text|title|type|uleb128|val|version|vtable_(entry|inherit)|warning|weak(ref)?|word|att_syntax(\\s*prefix)?)\\b)",
           "comment": "Pseudo-ops, directives, or subsection markers."
+        },
+        {  "name": "support.constant.arch_specification",
+           "match": "(?<!\\w)\\.(?i:(arch) (i8086|i[1-6]86|pentium(pro|iii?|4)?|prescott|nocona|core(2|i7)?|[lk]1om|k6(_2)?|athlon|k8|amdfam10|bdver[1-3]|btver[12]|generic(32|64)|.(mmx|sse([2-5]|4(.[12]|a))?|ssse3|avx[2]?|[vs]mx|ept|clflush|movbe|xsave(opt)?|aes|pclmul|fma|fsgsbase|rdrnd|f16c|bmi2|lzcnt|invpcid|vmfunc|hle|rtm|adx|rdseed|prfchw|smap|mpx|sha|3dnowa?|syscall|rdtscp|svme|abm|lwp|fma4|xop|cx16|padlock|avx512(p?f|cd|er)?))),\\s*(no)?jumps",
+           "captures": {
+               "2": { "name": "keyword.arch" }
+           }
         },
         {  "name": "support.constant.alternatives",
            "match": "\\b([A-Za-z$_.0-9]+)\\s*(==?)\\s*",
