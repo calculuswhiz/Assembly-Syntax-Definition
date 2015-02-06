@@ -178,7 +178,7 @@
            "match": "\\b(?i:movz(lq)?)\\b"
         },
         {  "name": "invalid.directives",
-           "match": "(?<!\\w)\\.(?i:abort|line|ln|intel_syntax(\\s*(no)?prefix)?|att_syntax\\s*noprefix)\\b",
+           "match": "(?<!\\w)\\.(?i:abort|line|ln|loc_mark_blocks|intel_syntax(\\s*(no)?prefix)?|att_syntax\\s*noprefix)\\b",
            "comment" : "You probably won't be using these anyway... but still. Good to have reminders, I guess?"
         },
         { "name": "support.constant.subsections",

@@ -336,7 +336,7 @@
 			<key>comment</key>
 			<string>You probably won't be using these anyway... but still. Good to have reminders, I guess?</string>
 			<key>match</key>
-			<string>(?&lt;!\w)\.(?i:abort|line|ln|intel_syntax(\s*(no)?prefix)?|att_syntax\s*noprefix)\b</string>
+			<string>(?&lt;!\w)\.(?i:abort|line|ln|loc_mark_blocks|intel_syntax(\s*(no)?prefix)?|att_syntax\s*noprefix)\b</string>
 			<key>name</key>
 			<string>invalid.directives</string>
 		</dict>
