@@ -1,3 +1,5 @@
 v1.1.2 !!ACHTUNG!!
     
     The commenting shortcut will now insert `#:' instead of `# '. This was done to help prevent people accidentally putting directives in their comments.
+    
+    I will also highlight valid directives if there is some number of spaces between it and the # that precedes it.

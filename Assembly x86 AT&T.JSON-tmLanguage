@@ -104,7 +104,10 @@
            "comment":"cpuid | grep -i 'xsaveopt'"
         },
         {  "name": "support.constant.preprocessor",
-           "match": "(?<!\\w)(#\\s*(#|include|define|undef|if|ifn?def|else|elsif|endif|pragma|warning))|__(FILE|LINE|DATE|TIME(STAMP)?|STDC_(VERSION|HOSTED)?|GNUC|GNUC_MINOR|GNUC_PATCHLEVEL|VERSION|STRICT_ANSI|BASE_FILE|INCLUDE_LEVEL|OPTIMIZE|OPTIMIZE_SIZE|NO_INLINE|CHAR_UNSIGNED|CHAR_BIT|INT_SHORT|SCHAR_MAX|SHRT_MAX|INT_MAX|LONG_MAX|LONG_LONG_MAX|REGISTER_PREFIX|USER_LABEL_PREFIX)__\\b"
+           "match": "(?<!\\w)(#(#|include|define|undef|if|ifn?def|else|elsif|endif|pragma|warning))|__(FILE|LINE|DATE|TIME(STAMP)?|STDC_(VERSION|HOSTED)?|GNUC|GNUC_MINOR|GNUC_PATCHLEVEL|VERSION|STRICT_ANSI|BASE_FILE|INCLUDE_LEVEL|OPTIMIZE|OPTIMIZE_SIZE|NO_INLINE|CHAR_UNSIGNED|CHAR_BIT|INT_SHORT|SCHAR_MAX|SHRT_MAX|INT_MAX|LONG_MAX|LONG_LONG_MAX|REGISTER_PREFIX|USER_LABEL_PREFIX)__\\b"
+        },
+        {  "name": "invalid.warnings",
+           "match": "(?<!\\w)(#\\s+(#|include|define|undef|if|ifn?def|else|elsif|endif|pragma|warning))\\b"
         },
         {
             "name": "comment.assembly", 
