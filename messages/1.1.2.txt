@@ -1,0 +1,3 @@
+v1.1.2 !!ACHTUNG!!
+    
+    The commenting shortcut will now insert `#:' instead of `# '. This was done to help prevent people accidentally putting directives in their comments.
