@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[
-arch ${1:architecture (e.g. pentium, i8086, etc.)}, ${2:no}jumps
+.arch ${1:architecture (e.g. pentium, i8086, etc.)}, ${2:no}jumps
 ]]></content>
     <tabTrigger>arch</tabTrigger>
     <scope>source.s</scope>
