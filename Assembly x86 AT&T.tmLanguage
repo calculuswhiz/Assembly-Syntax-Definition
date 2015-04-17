@@ -220,7 +220,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;!\w)(#\s+(#|(un)?assert|define|elif|else|endif|error|ident|(ifn?|un)?def|if|import|include(_next)?|line|pragma|sccs|warning)\b)</string>
+			<string>(?&lt;!\w)(#\s+(#|(un)?assert|define|elif|else|endif|error|ident|(ifn?|un)?def|if|import|include(_next)?|line|pragma|sccs|warning)\b).*</string>
 			<key>name</key>
 			<string>invalid.warnings</string>
 		</dict>
