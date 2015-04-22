@@ -2,9 +2,14 @@
     "patterns": [
         {
             "name": "entity.name.function.instructions", 
-            "match": "\\b(?i:aa[adms]|adc[bwlq]?|x?add[bwlq]?|and[bwlq]?|arpl|bound[wl]?|bs[fr][wlq]?|bswap[lq]?|bt[crs]?[wlq]?|call[wlq]?|clc|cld|cli|cltd[dqw]?|clts|cmc|cmov(n?[abgl]e?|n?[ceosz]|np|p[eo]?)?[lqw]?|cmp[bwlq]?|cmps[bwdq]?|cmpxchg[bwlq]?|cmpxchg(8|16)b|cpuid|c[lw]td[bwlq]?|daa|das|dec[bwlq]?|div[bwlq]?|enter|esc|hlt|idiv[bwlq]?|imul[bwlq]?|in[bwlq]?|inc[bwlq]?|insd?[bwlq]?|int(\\s*3|o)?|inv(d|pcid)?|invlpg|iret[dfq]?|j(n?[abgl]e?|n?[ceosz]|np|p[eo]?)|jmp|j[er]?cxz|[ls]ahf|lar|lcall|l[de]s|lea[bwlq]?|leave|l[defgs]s|[ls][gil]dt|ljmp|lmsw|loadall|lods[bwdq]?|loop(n?[ez][dw]?)?|lret|lsl|ltr|mov((s?(b[lwq]?|w[lq]?|lq?|q)?)|(z?(b[lwq]|w[lq]|l|q)))?|movd|movs(x?d|w)|mov[sz]x|mul[bwlq]?|neg[bwlq]?|nop|not[bwlq]?|x?or[bwlq]?|out[bwlq]?|outs[bdw]?|pop[bwlq]?|popal?|pop[af]d|popf[lq]?|push[bwlq]?|pushal?|push[af]d|pushf[lq]?|rc[lr][bwlq]?|(rd|wr)msr|rdtscp?|retf?|ro[lr][bwlq]?|rsm|sa[lr][bwlq]?|sbb[bwlq]?|scas[bdqw]?|set(n?[abgl]e?|n?[ceosz]|np|p[eo]?)|sh[lr]d?[bwlq]?|smsw|stc|std|sti|stos[bdqw]?|str|sub[bwlq]?|swapgs|syscall|sysret|sysenter|sysexit|test[bwlq]?|ud2|ver[rw]|fwait|wbinvd|xchg[bwlq]?|x[gs]etbv|xlatb?|xsave[cs]?(64)?|xrstors?(64)?)\\b",
-            "comment" : "I may organize these later based on processor additions."
+            "match": "\\b(?i:aa[adms]|adc[bwlq]?|x?add[bwlq]?|and[bwlq]?|arpl|bound[wl]?|bs[fr][wlq]?|bswap[lq]?|bt[crs]?[wlq]?|call[wlq]?|clc|cld|cli|cltd[dqw]?|clts|cmc|cmov(n?[abgl]e?|n?[ceosz]|np|p[eo]?)?[lqw]?|cmp[bwlq]?|cmps[bwdq]?|cmpxchg[bwlq]?|cmpxchg(8|16)b|cpuid|c[lw]td[bwlq]?|daa|das|dec[bwlq]?|div[bwlq]?|enter|esc|hlt|idiv[bwlq]?|imul[bwlq]?|in[bwlq]?|inc[bwlq]?|insd?[bwlq]?|int(\\s*3|o)?|inv(d|pcid)?|invlpg|iret[dfq]?|j(n?[abgl]e?|n?[ceosz]|np|p[eo]?)|jmp[lq]?|j[er]?cxz|[ls]ahf|lar|lcall|l[de]s|lea[bwlq]?|leave[lq]?|l[defgs]s|[ls][gil]dt[wl]?|ljmp[wl]?|lmsw|loadall|lods[bwdq]?|loop(n?[ez][dw]?)?|lret|lsl|ltr|mov((s?(b[lwq]?|w[lq]?|lq?|q)?)|(z?(b[lwq]|w[lq]|l|q)))?|movd|movs(x?d|w)|mov[sz]x|mul[bwlq]?|neg[bwlq]?|nop|not[bwlq]?|x?or[bwlq]?|out[bwlq]?|outs[bdw]?|pop[bwl]?|popf?q(_cfi(_reg)?)?|popal?|pop[af]d|popf[lq]?|push[bwl]?|pushf?q(_cfi(_reg)?)?|pushal?|push[af]d|pushf[lq]?|rc[lr][bwlq]?|(rd|wr)msr|rdtscp?|retf?|ro[lr][bwlq]?|rsm|sa[lr][bwlq]?|sbb[bwlq]?|scas[bdqw]?|set(n?[abgl]e?|n?[ceosz]|np|p[eo]?)|sh[lr]d?[bwlq]?|smsw|stc|std|sti|stos[bdqw]?|str|sub[bwlq]?|swapgs|syscall|sysret|sysenter|sysexit|test[bwlq]?|ud2|ver[rw]|fwait|wbinvd|xchg[bwlq]?|x[gs]etbv|xlatb?|xsave[cs]?(64)?|xrstors?(64)?)(?!:)\\b",
+            "comment" : "I may organize these later based on processor additions. Please investigate pop/pushq_cfi instructions."
         }, 
+        {
+            "name": "entity.name.function.obscure",
+            "match": "\\b(?i:ldrbt?)",
+            "comment": "Obscure instructions? I found in the Linux kernel code."
+        },
         {  "name": "entity.name.function.conversion.instructions",
            "match": "\\b(?i:cbw|cdqe?|cwde?|cdo|cqo|cbtw|cwt[ld]|clt[dq]|cqto)\\b",
            "comment": "Data type conversions. Apparently the Intel ones work too. I tried it."
@@ -104,7 +109,7 @@
            "comment":"cpuid | grep -i 'xsaveopt'"
         },
         {  "name": "support.constant.preprocessor",
-           "match": "(?<!\\w)(#(#|(un)?assert|define|elif|else|endif|error|ident|(ifn?|un)?def|if|import|include(_next)?|line|pragma|sccs|warning))|__(FILE|LINE|DATE|TIME(STAMP)?|STDC_(VERSION|HOSTED)?|GNUC|GNUC_MINOR|GNUC_PATCHLEVEL|VERSION|STRICT_ANSI|BASE_FILE|INCLUDE_LEVEL|OPTIMIZE|OPTIMIZE_SIZE|NO_INLINE|CHAR_UNSIGNED|CHAR_BIT|INT_SHORT|SCHAR_MAX|SHRT_MAX|INT_MAX|LONG_MAX|LONG_LONG_MAX|REGISTER_PREFIX|USER_LABEL_PREFIX)__\\b"
+           "match": "(?<!#)(#(#|(un)?assert|define|elif|else|endif|error|ident|(ifn?|un)?def|if|import|include(_next)?|line|pragma|sccs|warning))|__(FILE|LINE|DATE|TIME(STAMP)?|STDC_(VERSION|HOSTED)?|GNUC|GNUC_MINOR|GNUC_PATCHLEVEL|VERSION|STRICT_ANSI|BASE_FILE|INCLUDE_LEVEL|OPTIMIZE|OPTIMIZE_SIZE|NO_INLINE|CHAR_UNSIGNED|CHAR_BIT|INT_SHORT|SCHAR_MAX|SHRT_MAX|INT_MAX|LONG_MAX|LONG_LONG_MAX|REGISTER_PREFIX|USER_LABEL_PREFIX)__\\b"
         },
         {  "name": "invalid.warnings",
            "match": "(?<!\\w)(#\\s+(#|(un)?assert|define|elif|else|endif|error|ident|(ifn?|un)?def|if|import|include(_next)?|line|pragma|sccs|warning)\\b).*"
@@ -118,6 +123,10 @@
             "end": "\\*/", 
             "name": "comment.assembly"
         }, 
+        { "name": "keyword.label.assembly",
+          "match": "((\\s+|^)([A-Za-z$_.0-9]|C-[BA])+[:])",
+          "comment": "Assembly label/symbols."
+        },
         {
             "name": "constant.numeric.decimal", 
             "match": "(?<!\\w)[-~]?[1-9][0-9]*\\b",
@@ -133,7 +142,7 @@
         }, 
         {
             "name": "constant.other.hex", 
-            "match": "(?<!\\w)[$](?i)(0x)[A-F0-9]+\\b"
+            "match": "(?<!\\w)[$](?i)(0x)?[A-F0-9]+\\b"
         }, 
         {
             "name": "constant.numeric.binary", 
@@ -173,10 +182,6 @@
             // Why were these here? These were eflags bits...
             // [roditszapc]f|vip|vif|ac|vm|nt|iopl|id| 
         },
-        { "name": "keyword.label.assembly",
-          "match": "((\\s+|^)([A-Za-z$_.0-9]|C-[BA])+[:])",
-          "comment": "Assembly label/symbols."
-        },
         {  "name": "invalid.instructions",
            "match": "\\b(?i:movz(lq)?)\\b"
         },
@@ -185,7 +190,7 @@
            "comment" : "You probably won't be using these anyway... but still. Good to have reminders, I guess?"
         },
         { "name": "support.constant.subsections",
-          "match": "(?<!\\w)(?i:\\.(app-file|asci[iz]|b?align|bundle_(align_mode|(un)?lock)|byte|cfi_(sections|startproc|endproc|personality|lsda|def_cfa|def_cfa_register|def_cfa_offset|adjust_cfa_offset|offset|rel_offset|register|restore|undefined|same_value|remember_state|return_column|signal_frame|window_save|escape|val_encoded_addr)|code(16(gcc)?|32|64)|data|def|desc|dim|double|eject|else(if)?|end([ei]f|func|[mr])?|exitm|equ(iv)?|eqv|err(or)?|extern|fail|file|fill|float|globa?l|hidden|hword|ident|if(def|eqs?|[gl][et]|n?[bc]|n(ot)?def|nes?)?|incbin|include|int(ernal)?|irpc?|l?comm|lflags|linkonce|loc(_mark_labels|al)?|mri|(no)?list|long|macro|(no)?altmacro|octa|org|p2align[wl]?|popsection|previous|print|protected|p?size|purgem|quad|rept|sbttl|scl|set|short|single|skip|sleb128|space|stab[dns]|string(8|16|32|64)?|struct|subsection|symver|tag|text|title|uleb128|val|version|vtable_(entry|inherit)|warning|weak(ref)?|word|att_syntax(\\s*prefix)?)\\b)",
+          "match": "(?<!\\w)(?i:\\.(app-file|asci[iz]|b?align|bundle_(align_mode|(un)?lock)|bss|byte|cfi_(sections|startproc|endproc|personality|lsda|def_cfa|def_cfa_register|def_cfa_offset|adjust_cfa_offset|offset|rel_offset|register|restore|undefined|same_value|remember_state|return_column|signal_frame|window_save|escape|val_encoded_addr)|code(16(gcc)?|32|64)|data|def|desc|dim|double|eject|else(if)?|end([ei]f|func|[mr])?|exitm|equ(iv)?|eqv|err(or)?|extern|fail|file|fill|float|globa?l|hidden|hword|ident|if(def|eqs?|[gl][et]|n?[bc]|n(ot)?def|nes?)?|incbin|include|int(ernal)?|irpc?|l?comm|lflags|linkonce|loc(_mark_labels|al)?|mri|(no)?list|long|macro|(no)?altmacro|octa|org|p2align[wl]?|popsection|previous|print|protected|p?size|purgem|quad|rept|sbttl|scl|set|short|single|skip|sleb128|space|stab[dns]|string(8|16|32|64)?|struct|subsection|symver|tag|text|title|uleb128|val|version|vtable_(entry|inherit)|warning|weak(ref)?|word|att_syntax(\\s*prefix)?)\\b)",
           "comment": "Pseudo-ops, directives, or subsection markers."
         },
         {  "name": "support.constant.subsections.type",
@@ -196,9 +201,9 @@
            "comment": "Specific to the .type pseudo-op."
         },
         {  "name": "support.constant.subsections.section",
-           "match": "((?i:\\.(push)?section)(.*?)(@((no|prog)bits|note|((pre)?init|fini)_array)))",
+           "match": "((?i:\\.(push)?section)((.*,.*?)(@((no|prog)bits|note|((pre)?init|fini)_array)|\".*?\"))?)",
            "captures": {
-               "4": { "name": "variable.parameter.symbol" }
+               "5": { "name": "variable.parameter.symbol" }
            },
            "comment": "Specific to the .section"
         },
