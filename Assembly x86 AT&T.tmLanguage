@@ -208,7 +208,7 @@
 			<key>comment</key>
 			<string>cpuid | grep -i 'avx:'</string>
 			<key>match</key>
-			<string>\b(?i:vadd(sub)?p[ds]|vandn?p[ds]|vblendv?p[ds]|vbroadcastf128|vbroadcasts[ds]|vroundp[ds]|vcmp[ps][ds]|vcvtdq2p[ds]|vcvtpd2(dq|ps)|vcvtps2(dq|pd)|vcvttp[ds]2dq|vdivp[ds])(?!:)\b</string>
+			<string>\b(?i:vadd(sub)?p[ds]|vandn?p[ds]|vblendv?p[ds]|vbroadcastf128|vbroadcasts[ds]|vroundp[ds]|vcmp[ps][ds]|vcvtdq2p[ds]|vcvtpd2(dq|ps)|vcvtps2(dq|pd)|vcvttp[ds]2dq|vdivp[ds]|vdpps|vextractf128|vh(add|sub)p[ds]|vinsertf128|vlddqu|vmovap[ds]|vmovd(q[au])?|vmovup[ds]|vmaskmovp[ds]|v(max|min)p[ds]|vmov(d|s[hl])?dup|vmovmskp[ds]|vmulp[ds]|vx?orp[ds]|vpermilp[ds]|vperm2f128|vrcpps|vrsqrtps|vpxor|vshufp[ds]|vsqrtp[ds]|vmovntp[ds]|vmovntdq|vsubp[ds]|vtestp[ds]|vptest|vunpck[lh]p[ds]|vzero(all|upper))(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.AVX</string>
 		</dict>
@@ -224,9 +224,9 @@
 			<key>comment</key>
 			<string>cpuid | grep -i 'avx512'</string>
 			<key>match</key>
-			<string>\b(?i:vpabs[bdqw]|vpand[dq]|vpadd[dw])(?!:)\b</string>
+			<string>\b(?i:vpabs[bdqw]|vpandn?[dq]|vpadd[bdwq]|valignq|vpblendm[bdqw]|vbroadcast[if]32x[248]|vbroadcast[if]64x[24]|vpbroadcastm(b2q|w2d)|vpcmpu?[bdqw]|vcomis[ds]|vpcompress[dq]|vcompressp[ds]|vpconflict[dq]|vcvtqq2p[ds]|vcvtu[qd]q2p[ds]|vcvtsi2s[ds]|vcvtt?p[ds]2u?[dq]q|vcvtt?sd2(u?si|s[is])|vcvtss2u?si|vcvtss2sd|vcvtusi2s[sd]|vpmov[sz]x(w[dq]|dq|b[wdq])|vpmovu?s?(wb|d[wb]|q[wdb])|vcvtts[ds]2u?si|vdbpsadbw|vdiv[ps][ds]|vexp2p[ds]|vpexpand[dq]|vexpandp[ds]|v(extract|insert)[fi]32x[48]|v(extract|insert)[if]64x[24]|vfixupimm[ps][ds]|vfpclass[ps][ds]|vgetexp[ps][ds]|vgetmant[ps][ds]|vp?(gather|scatter)[dq](ps|[qd]|pd)|kandn?w|kmovw|knotw|k(xn?)?orw|kortestw|kunpck(bw|dq|wd)|vmovq|vmovdqa(32|64)|vmovs[ds]|vmovdqu(8|16|32|64)|vplzcnt[dq]|vpmadd(wd|52[hl]uq|ubsw)|vp(max|min)[su][bdqw]|vpmov[bdqw]2m|vpmovm2[bdqw]|vpmulu?dq|vmulss|vpmulhu?w|vpmulhrsw|vpmull[dqw]|vpmultishiftqb|vpor[dq]|vpack[us]s(wb|dw)|vperm[bdqw]|vpermp[ds]|vperm[it]2[bdqw]|vperm[it]2p[ds]|v(gather|scatter)pf[01][dq]p[ds]|v(range|reduce)[ps][ds]|vrcp(14|28)[ps][ds]|vpro[lr]v?[dq]|vrndscale[ps][ds]|vrsqrt(14|28)[ps][ds]|vpsadbw|vscalef[ps][ds]|vpxor[dq]|vpshuf[bd]|vshuf[if]32x4|vshuf[if]64x2|vpshuf[hl]w|vpsllv?[wdq]|vsqrts[ds]|vpsr[al]v?[dqw]|vpsub[bdqw]|vsubs[ds]|vpsubu?s[bw]|vpternlog[dq]|vptestn?m[bdqw]|vpunpck[hl](wd|q?dq|bw)|vpxord)(?!:)\b</string>
 			<key>name</key>
-			<string>entity.name.function.AVX2</string>
+			<string>entity.name.function.AVX512</string>
 		</dict>
 		<dict>
 			<key>comment</key>
