@@ -24,7 +24,7 @@
 			<key>comment</key>
 			<string>Data type conversions. Apparently the Intel ones work too. I tried it.</string>
 			<key>match</key>
-			<string>\b(?i:cbw|cdqe?|cwde?|cdo|cqo|cbtw|cwt[ld]|clt[dq]|cqto)\b</string>
+			<string>\b(?i:cbw|cdqe?|cwde?|cdo|cqo|cbtw|cwt[ld]|clt[dq]|cqto)(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.conversion.instructions</string>
 		</dict>
@@ -32,7 +32,7 @@
 			<key>comment</key>
 			<string>Not really instructions.</string>
 			<key>match</key>
-			<string>\b(?i:rep(n?[ez])?|[c-gs]s|(addr|data)(16|32)|lock|wait|rex(64xyz)?)\b</string>
+			<string>\b(?i:rep(n?[ez])?|[c-gs]s|(addr|data)(16|32)|lock|wait|rex(64xyz)?)(?!:)\b</string>
 			<key>name</key>
 			<string>keyword.name.function.prefixes</string>
 		</dict>
@@ -40,7 +40,7 @@
 			<key>comment</key>
 			<string>cpuid | grep -i mmx</string>
 			<key>match</key>
-			<string>\b(?i:emms|mov[dq]|pack(ssdw|[us]swb)|padd([bdw]|u?s[bw])|pandn?|pcmp(eq|gt)[bdw]|pmaddwd|pmul[hl]w|psll[dqw]|psr(a[dw]|l[dqw])|psub([bdw]|u?s[bw])|punpck[hl](bw|dq|wd)|px?or|rdpmc)\b</string>
+			<string>\b(?i:emms|mov[dq]|pack(ssdw|[us]swb)|padd([bdw]|u?s[bw])|pandn?|pcmp(eq|gt)[bdw]|pmaddwd|pmul[hl]w|psll[dqw]|psr(a[dw]|l[dqw])|psub([bdw]|u?s[bw])|punpck[hl](bw|dq|wd)|px?or|rdpmc)(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.mmx_instructions</string>
 		</dict>
@@ -48,7 +48,7 @@
 			<key>comment</key>
 			<string>cpuid | grep -i 'sse ext'</string>
 			<key>match</key>
-			<string>\b(?i:maskmovq|movntps|movntq|prefetcht[012]|prefetchnta|sfence)\b</string>
+			<string>\b(?i:maskmovq|movntps|movntq|prefetcht[012]|prefetchnta|sfence)(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.sse</string>
 		</dict>
@@ -56,7 +56,7 @@
 			<key>comment</key>
 			<string>cpuid | grep -i 'sse ext'</string>
 			<key>match</key>
-			<string>\b(?i:add[sp]s|cmp[ps]s|u?comiss|cvt(p(i2ps|s2pi)|s(i2ss|s2si)|t(ps2pi|ss2si))|div[ps]s|ldmxcsr|(max|min)[ps]s|mov(a|hl?|lh?|msk|nt)ps|v?mov(s|up)s|mul[ps]s|rcp[ps]s|r?sqrt[ps]s|shufps|stmxcsr|sub[ps]s|unpck[hl]ps|andn?ps|x?orps|pavg[bw]|pextrw|pminsrw|p(max|min)(sw|ub)|pmovmskb|pmulhuw|psadbw|pshufw)\b</string>
+			<string>\b(?i:add[sp]s|cmp[ps]s|u?comiss|cvt(p(i2ps|s2pi)|s(i2ss|s2si)|t(ps2pi|ss2si))|div[ps]s|ldmxcsr|(max|min)[ps]s|mov(a|hl?|lh?|msk|nt)ps|v?mov(s|up)s|mul[ps]s|rcp[ps]s|r?sqrt[ps]s|shufps|stmxcsr|sub[ps]s|unpck[hl]ps|andn?ps|x?orps|pavg[bw]|pextrw|pminsrw|p(max|min)(sw|ub)|pmovmskb|pmulhuw|psadbw|pshufw)(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.sse_simd</string>
 		</dict>
@@ -64,7 +64,7 @@
 			<key>comment</key>
 			<string>cpuid | grep -i 'sse2'</string>
 			<key>match</key>
-			<string>\b(?i:clflush|[lm]fence|maskmovdqu|v?movnt(dq|i|pd)|pause)\b</string>
+			<string>\b(?i:clflush|[lm]fence|maskmovdqu|v?movnt(dq|i|pd)|pause)(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.sse2</string>
 		</dict>
@@ -72,7 +72,7 @@
 			<key>comment</key>
 			<string>cpuid | grep -i 'sse2'</string>
 			<key>match</key>
-			<string>\b(?i:v?add[ps][ds]|andn?pd|bzhi[wl]?|cmp[ps]d|u?comisd|cvtdq2p[ds]|cvtt?pd2(dq|pi)|cvtpd2ps|cvtp[is]2pd|cvtt?ps2dq|cvtt?sd2s[is]|cvts[is]2sd|div[ps][ds]|v?(max|min)[ps][ds]|v?mov[ahlu]pd|v?movmskpd|v?mul[ps]d|x?orpd|shufpd|sqrt[ps]d|sub[ps]d|unpck[hl]pd|unpcklpd|movdq(2q|[au])|movq2dq|paddq|psubq|pmuludq|pshuf([hl]w|d)|ps[lr]ldq|punpck[hl]qdq)\b</string>
+			<string>\b(?i:v?add[ps][ds]|andn?pd|bzhi[wl]?|cmp[ps]d|u?comisd|cvtdq2p[ds]|cvtt?pd2(dq|pi)|cvtpd2ps|cvtp[is]2pd|cvtt?ps2dq|cvtt?sd2s[is]|cvts[is]2sd|div[ps][ds]|v?(max|min)[ps][ds]|v?mov[ahlu]pd|v?movmskpd|v?mul[ps]d|x?orpd|shufpd|sqrt[ps]d|sub[ps]d|unpck[hl]pd|unpcklpd|movdq(2q|[au])|movq2dq|paddq|psubq|pmuludq|pshuf([hl]w|d)|ps[lr]ldq|punpck[hl]qdq)(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.sse2_simd</string>
 		</dict>
@@ -80,7 +80,7 @@
 			<key>comment</key>
 			<string>cpuid | grep -i 'pni/sse3'</string>
 			<key>match</key>
-			<string>\b(?i:lddqu|monitor|mwait)\b</string>
+			<string>\b(?i:lddqu|monitor|mwait)(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.sse3</string>
 		</dict>
@@ -88,7 +88,7 @@
 			<key>comment</key>
 			<string>cpuid | grep -i 'ssse3'</string>
 			<key>match</key>
-			<string>\b(?i:addsubp[ds]|haddp[ds]|hsubp[ds]|v?mov(d|s[hl])dup|psign[bdw]|pshufb|pmulhrsw|pmaddubsw|phsub(s?w|d)|phadd(s?w|d)|palignr|pabs[bdw])\b</string>
+			<string>\b(?i:addsubp[ds]|haddp[ds]|hsubp[ds]|v?mov(d|s[hl])dup|psign[bdw]|pshufb|pmulhrsw|pmaddubsw|phsub(s?w|d)|phadd(s?w|d)|palignr|pabs[bdw])(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.xsse3_simd</string>
 		</dict>
@@ -96,7 +96,7 @@
 			<key>comment</key>
 			<string>cpuid | grep -i 'sse4'</string>
 			<key>match</key>
-			<string>\b(?i:v?mpsadbw|phminposuw|pmul(ld|dq)|dpp[ds]|blendv?p[ds]|pblendvb|pblendw|p(max|min)(s[bd]|u[wd])|roundp[ds]|rounds[ds]|insertps|pinsr[bwdq]|extractps|pextr[bdq]|pmov[sz]xb[dwq]|pmov[sz]xw[dq]|pmov[sz]xdq|pmov[sz]x|ptest|pcmpeqq|packusdw|v?movntdqa|lzcnt|popcnt|extrq|insertq|movnts[ds]|crc32|pcmp[ei]str[im]|pcmpgtq)\b</string>
+			<string>\b(?i:v?mpsadbw|phminposuw|pmul(ld|dq)|dpp[ds]|blendv?p[ds]|pblendvb|pblendw|p(max|min)(s[bd]|u[wd])|roundp[ds]|rounds[ds]|insertps|pinsr[bwdq]|extractps|pextr[bdq]|pmov[sz]xb[dwq]|pmov[sz]xw[dq]|pmov[sz]xdq|pmov[sz]x|ptest|pcmpeqq|packusdw|v?movntdqa|lzcnt|popcnt|extrq|insertq|movnts[ds]|crc32|pcmp[ei]str[im]|pcmpgtq)(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.sse4_simd</string>
 		</dict>
@@ -104,7 +104,7 @@
 			<key>comment</key>
 			<string>cpuid | grep -i x87</string>
 			<key>match</key>
-			<string>\b(?i:f(2xm1|abs|addp?|bld|b?stp|chs|n?clex|u?comp{0,2}|decstp|n?disi|div(p|rp?)?|n?eni|free(p|\s*ST)?|iadd|icomp?|idivr?|ildl?|imul|incstp|n?init|ist((pl?|l)|tp)?|isubr?|ld[1slt]?|ldcw|ldenv[dw]?|ldl2[et]|ldl[gn]2|ldpi|ldz|mulp?|nop|n?stenv[wd]?|n?stsw|pa?tan|prem1?|rndint|rstor[dw]?|n?savew?|scale|sqrt|st(p?[slt])|n?stcw|sub(p|rp?)?|tst|wait|xam|xch|xtract|yl2x(p1)?|setpm|cos|saved|sin(cos)?|cmovn?b?e?|cmovn?u|u?comip?|xrstor|xsave))\b</string>
+			<string>\b(?i:f(2xm1|abs|addp?|bld|b?stp|chs|n?clex|u?comp{0,2}|decstp|n?disi|div(p|rp?)?|n?eni|free(p|\s*ST)?|iadd|icomp?|idivr?|ildl?|imul|incstp|n?init|ist((pl?|l)|tp)?|isubr?|ld[1slt]?|ldcw|ldenv[dw]?|ldl2[et]|ldl[gn]2|ldpi|ldz|mulp?|nop|n?stenv[wd]?|n?stsw|pa?tan|prem1?|rndint|rstor[dw]?|n?savew?|scale|sqrt|st(p?[slt])|n?stcw|sub(p|rp?)?|tst|wait|xam|xch|xtract|yl2x(p1)?|setpm|cos|saved|sin(cos)?|cmovn?b?e?|cmovn?u|u?comip?|xrstor(64)?|xsave(64)?))(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.fpu_x87</string>
 		</dict>
@@ -112,15 +112,23 @@
 			<key>comment</key>
 			<string>cpuid | grep -i aes</string>
 			<key>match</key>
-			<string>\b(?i:aes(en|de)c(last)?|aeskeygenassist|aesimc)\b</string>
+			<string>\b(?i:aes(en|de)c(last)?|aeskeygenassist|aesimc)(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.aes_functions</string>
 		</dict>
 		<dict>
 			<key>comment</key>
+			<string>cpuid | grep SHA</string>
+			<key>match</key>
+			<string>\b(?i:sha((1|256)msg[12]|1nexte|1rnds4|256rnds2))(?!:)\b</string>
+			<key>name</key>
+			<string>entity.name.function.sha_functions</string>
+		</dict>
+		<dict>
+			<key>comment</key>
 			<string>cpuid | grep -i 'bmi i'</string>
 			<key>match</key>
-			<string>\b(?i:andn[lq]?|bextr[lq]?|blsi[lq]?|blsmsk[lq]?|blsr[dlq]?|tzcnt[wlq]?)\b</string>
+			<string>\b(?i:andn[lq]?|bextr[lq]?|blsi[lq]?|blsmsk[lq]?|blsr[dlq]?|tzcnt[wlq]?)(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.bmi1</string>
 		</dict>
@@ -128,31 +136,63 @@
 			<key>comment</key>
 			<string>cpuid | grep -i 'bmi2'</string>
 			<key>match</key>
-			<string>\b(?i:mulx[lq]?|pdep[lq]?|pext[lq]?|rorx[lq]?|s(h[lr]|ar)x)\b</string>
+			<string>\b(?i:mulx[lq]?|pdep[lq]?|pext[lq]?|rorx[lq]?|s(h[lr]|ar)x)(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.bmi2</string>
 		</dict>
 		<dict>
 			<key>comment</key>
+			<string>cpuid | grep -i 'adx'</string>
+			<key>match</key>
+			<string>\b(?i:ad[co]x)(?!:)\b</string>
+			<key>name</key>
+			<string>entity.name.function.adx</string>
+		</dict>
+		<dict>
+			<key>comment</key>
 			<string>cpuid | grep -i 'clmul'</string>
 			<key>match</key>
-			<string>\b(?i:pclmulqdq)\b</string>
+			<string>\b(?i:pclmulqdq)(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.clmul</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>cpuid | grep -i 'prefetchw'</string>
+			<string>cpuid | grep 'PREFETCHW'</string>
 			<key>match</key>
-			<string>\b(?i:prefetchw)\b</string>
+			<string>\b(?i:prefetchw(t1)?)(?!:)\b</string>
 			<key>name</key>
-			<string>entity.name.function.prefetchw</string>
+			<string>entity.name.function.prefetchwt</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>cpuid | grep -i 'clflush i'</string>
+			<key>match</key>
+			<string>\b(?i:clflushopt)(?!:)\b</string>
+			<key>name</key>
+			<string>entity.name.function.clflushopt</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>cpuid | grep -i 'rdseed'</string>
+			<key>match</key>
+			<string>\b(?i:rdseed)(?!:)\b</string>
+			<key>name</key>
+			<string>entity.name.function.rdseed</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>cpuid | grep -i 'mpx'</string>
+			<key>match</key>
+			<string>\b(?i:bnd(c[uln]|mk|stx))(?!:)\b</string>
+			<key>name</key>
+			<string>entity.name.function.mpx</string>
 		</dict>
 		<dict>
 			<key>comment</key>
 			<string>cpuid | grep -i 'fsgs'</string>
 			<key>match</key>
-			<string>\b(?i:(rd|wr)[fg]sbase)\b</string>
+			<string>\b(?i:(rd|wr)[fg]sbase)(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.fsgsbase</string>
 		</dict>
@@ -160,23 +200,39 @@
 			<key>comment</key>
 			<string>cpuid | grep -i 'rdrand'</string>
 			<key>match</key>
-			<string>\b(?i:rdrand)\b</string>
+			<string>\b(?i:rdrand)(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.rdrand</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>cpuid | grep -i 'avx'</string>
+			<string>cpuid | grep -i 'avx:'</string>
 			<key>match</key>
-			<string>\b(?i:vp?broadcast(s[sd]|f128)?|vp(and|addd|shuf[b]|sub[dq]|srldq|unpck[lh]q?dq|xor)|v(extract|insert|perm2)[if]128|vgather[dq]p[ds]|vp?maskmov|vpblendd|vperm([dq]|(il)?p[sd])|vpgather[dq]{1,2}|vpsllv[dq]|vpsr(avd|lv[qd])|vtestp[ds]|vzero(all|upper))\b</string>
+			<string>\b(?i:vadd(sub)?p[ds]|vandn?p[ds]|vblendv?p[ds]|vbroadcastf128|vbroadcasts[ds]|vroundp[ds]|vcmp[ps][ds]|vcvtdq2p[ds]|vcvtpd2(dq|ps)|vcvtps2(dq|pd)|vcvttp[ds]2dq|vdivp[ds])(?!:)\b</string>
 			<key>name</key>
-			<string>entity.name.function.AVXx</string>
+			<string>entity.name.function.AVX</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>cpuid | grep -i 'avx2'</string>
+			<key>match</key>
+			<string>\b(?i:vpabs[bdw]|vpadd[bdqw]|vpaddu?s[bw]|vpalignr|vpandn?|vpavg[bw]|vpblend[dw]|vpblendvb|vpbroadcast[bdqw]|movddup|vbroadcasts[ds]|vbroadcasti128|vps[lr]ldq|vpcmp(eq|gt)[bdqw]|vpmovsx(wd|wq|dq|bw))(?!:)\b</string>
+			<key>name</key>
+			<string>entity.name.function.AVX2</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>cpuid | grep -i 'avx512'</string>
+			<key>match</key>
+			<string>\b(?i:vpabs[bdqw]|vpand[dq]|vpadd[dw])(?!:)\b</string>
+			<key>name</key>
+			<string>entity.name.function.AVX2</string>
 		</dict>
 		<dict>
 			<key>comment</key>
 			<string>cpuid | grep -i 'f16c'</string>
 			<key>match</key>
-			<string>\b(?i:vcvt(ph2ps|ps2ph))\b</string>
+			<string>\b(?i:vcvt(ph2ps|ps2ph))(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.F16c</string>
 		</dict>
@@ -184,15 +240,23 @@
 			<key>comment</key>
 			<string>cpuid | grep -i 'fma'</string>
 			<key>match</key>
-			<string>\b(?i:vfn?m((add(sub)?|sub(add)?)((132|213|231)[ps][ds])))\b</string>
+			<string>\b(?i:vfn?m((add(sub)?|sub(add)?)((132|213|231)[ps][ds])))(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.FMA</string>
 		</dict>
 		<dict>
 			<key>comment</key>
+			<string>cpuid | grep -i 'avx512'</string>
+			<key>match</key>
+			<string>\b(?i:vpandn?[dq]|vpad[cd]d|vaddn?p[ds]|vpaddset[cs]d|vaddsetsps|valignd|vpblendm[dq]|vblendmp[ds]|clevict[01]|vpcmpu?d)(?!:)\b</string>
+			<key>name</key>
+			<string>entity.name.function.KNC</string>
+		</dict>
+		<dict>
+			<key>comment</key>
 			<string>cpuid | grep -i 'rtm'</string>
 			<key>match</key>
-			<string>\b(?i:x(abort|begin|end|test))\b</string>
+			<string>\b(?i:x(abort|begin|end|test))(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.RTM</string>
 		</dict>
@@ -200,7 +264,7 @@
 			<key>comment</key>
 			<string>cpuid | grep -i 'HLE'</string>
 			<key>match</key>
-			<string>\b(?i:x(acquire|release|test))\b</string>
+			<string>\b(?i:x(acquire|release|test))(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.HLE</string>
 		</dict>
@@ -208,7 +272,7 @@
 			<key>comment</key>
 			<string>cpuid | grep -i 'xsaveopt'</string>
 			<key>match</key>
-			<string>\b(?i:xsaveopt(64)?)\b</string>
+			<string>\b(?i:xsaveopt(64)?)(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.xsave</string>
 		</dict>

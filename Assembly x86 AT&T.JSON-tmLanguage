@@ -6,101 +6,139 @@
             "comment" : "I may organize these later based on processor additions. Please investigate pop/pushq_cfi instructions."
         }, 
         {  "name": "entity.name.function.conversion.instructions",
-           "match": "\\b(?i:cbw|cdqe?|cwde?|cdo|cqo|cbtw|cwt[ld]|clt[dq]|cqto)\\b",
+           "match": "\\b(?i:cbw|cdqe?|cwde?|cdo|cqo|cbtw|cwt[ld]|clt[dq]|cqto)(?!:)\\b",
            "comment": "Data type conversions. Apparently the Intel ones work too. I tried it."
         },
         {  "name": "keyword.name.function.prefixes",
-           "match": "\\b(?i:rep(n?[ez])?|[c-gs]s|(addr|data)(16|32)|lock|wait|rex(64xyz)?)\\b",
+           "match": "\\b(?i:rep(n?[ez])?|[c-gs]s|(addr|data)(16|32)|lock|wait|rex(64xyz)?)(?!:)\\b",
            "comment": "Not really instructions."
         },
         {  "name": "entity.name.function.mmx_instructions",
-           "match": "\\b(?i:emms|mov[dq]|pack(ssdw|[us]swb)|padd([bdw]|u?s[bw])|pandn?|pcmp(eq|gt)[bdw]|pmaddwd|pmul[hl]w|psll[dqw]|psr(a[dw]|l[dqw])|psub([bdw]|u?s[bw])|punpck[hl](bw|dq|wd)|px?or|rdpmc)\\b",
+           "match": "\\b(?i:emms|mov[dq]|pack(ssdw|[us]swb)|padd([bdw]|u?s[bw])|pandn?|pcmp(eq|gt)[bdw]|pmaddwd|pmul[hl]w|psll[dqw]|psr(a[dw]|l[dqw])|psub([bdw]|u?s[bw])|punpck[hl](bw|dq|wd)|px?or|rdpmc)(?!:)\\b",
            "comment": "cpuid | grep -i mmx"
         },
         {  "name": "entity.name.function.sse",
-           "match": "\\b(?i:maskmovq|movntps|movntq|prefetcht[012]|prefetchnta|sfence)\\b",
+           "match": "\\b(?i:maskmovq|movntps|movntq|prefetcht[012]|prefetchnta|sfence)(?!:)\\b",
            "comment": "cpuid | grep -i 'sse ext'"
         },
         {  "name": "entity.name.function.sse_simd",
-           "match": "\\b(?i:add[sp]s|cmp[ps]s|u?comiss|cvt(p(i2ps|s2pi)|s(i2ss|s2si)|t(ps2pi|ss2si))|div[ps]s|ldmxcsr|(max|min)[ps]s|mov(a|hl?|lh?|msk|nt)ps|v?mov(s|up)s|mul[ps]s|rcp[ps]s|r?sqrt[ps]s|shufps|stmxcsr|sub[ps]s|unpck[hl]ps|andn?ps|x?orps|pavg[bw]|pextrw|pminsrw|p(max|min)(sw|ub)|pmovmskb|pmulhuw|psadbw|pshufw)\\b",
+           "match": "\\b(?i:add[sp]s|cmp[ps]s|u?comiss|cvt(p(i2ps|s2pi)|s(i2ss|s2si)|t(ps2pi|ss2si))|div[ps]s|ldmxcsr|(max|min)[ps]s|mov(a|hl?|lh?|msk|nt)ps|v?mov(s|up)s|mul[ps]s|rcp[ps]s|r?sqrt[ps]s|shufps|stmxcsr|sub[ps]s|unpck[hl]ps|andn?ps|x?orps|pavg[bw]|pextrw|pminsrw|p(max|min)(sw|ub)|pmovmskb|pmulhuw|psadbw|pshufw)(?!:)\\b",
            "comment": "cpuid | grep -i 'sse ext'"
         },
         {  "name": "entity.name.function.sse2",
-           "match": "\\b(?i:clflush|[lm]fence|maskmovdqu|v?movnt(dq|i|pd)|pause)\\b",
+           "match": "\\b(?i:clflush|[lm]fence|maskmovdqu|v?movnt(dq|i|pd)|pause)(?!:)\\b",
            "comment": "cpuid | grep -i 'sse2'"
         },
         {  "name": "entity.name.function.sse2_simd",
-           "match": "\\b(?i:v?add[ps][ds]|andn?pd|bzhi[wl]?|cmp[ps]d|u?comisd|cvtdq2p[ds]|cvtt?pd2(dq|pi)|cvtpd2ps|cvtp[is]2pd|cvtt?ps2dq|cvtt?sd2s[is]|cvts[is]2sd|div[ps][ds]|v?(max|min)[ps][ds]|v?mov[ahlu]pd|v?movmskpd|v?mul[ps]d|x?orpd|shufpd|sqrt[ps]d|sub[ps]d|unpck[hl]pd|unpcklpd|movdq(2q|[au])|movq2dq|paddq|psubq|pmuludq|pshuf([hl]w|d)|ps[lr]ldq|punpck[hl]qdq)\\b",
+           "match": "\\b(?i:v?add[ps][ds]|andn?pd|bzhi[wl]?|cmp[ps]d|u?comisd|cvtdq2p[ds]|cvtt?pd2(dq|pi)|cvtpd2ps|cvtp[is]2pd|cvtt?ps2dq|cvtt?sd2s[is]|cvts[is]2sd|div[ps][ds]|v?(max|min)[ps][ds]|v?mov[ahlu]pd|v?movmskpd|v?mul[ps]d|x?orpd|shufpd|sqrt[ps]d|sub[ps]d|unpck[hl]pd|unpcklpd|movdq(2q|[au])|movq2dq|paddq|psubq|pmuludq|pshuf([hl]w|d)|ps[lr]ldq|punpck[hl]qdq)(?!:)\\b",
            "comment": "cpuid | grep -i 'sse2'"
         },
         {  "name": "entity.name.function.sse3",
-           "match": "\\b(?i:lddqu|monitor|mwait)\\b",
+           "match": "\\b(?i:lddqu|monitor|mwait)(?!:)\\b",
            "comment" : "cpuid | grep -i 'pni/sse3'"
         },
         {  "name": "entity.name.function.xsse3_simd",
-           "match": "\\b(?i:addsubp[ds]|haddp[ds]|hsubp[ds]|v?mov(d|s[hl])dup|psign[bdw]|pshufb|pmulhrsw|pmaddubsw|phsub(s?w|d)|phadd(s?w|d)|palignr|pabs[bdw])\\b",
+           "match": "\\b(?i:addsubp[ds]|haddp[ds]|hsubp[ds]|v?mov(d|s[hl])dup|psign[bdw]|pshufb|pmulhrsw|pmaddubsw|phsub(s?w|d)|phadd(s?w|d)|palignr|pabs[bdw])(?!:)\\b",
            "comment" : "cpuid | grep -i 'ssse3'"
         },
         {  "name": "entity.name.function.sse4_simd",
-           "match": "\\b(?i:v?mpsadbw|phminposuw|pmul(ld|dq)|dpp[ds]|blendv?p[ds]|pblendvb|pblendw|p(max|min)(s[bd]|u[wd])|roundp[ds]|rounds[ds]|insertps|pinsr[bwdq]|extractps|pextr[bdq]|pmov[sz]xb[dwq]|pmov[sz]xw[dq]|pmov[sz]xdq|pmov[sz]x|ptest|pcmpeqq|packusdw|v?movntdqa|lzcnt|popcnt|extrq|insertq|movnts[ds]|crc32|pcmp[ei]str[im]|pcmpgtq)\\b",
+           "match": "\\b(?i:v?mpsadbw|phminposuw|pmul(ld|dq)|dpp[ds]|blendv?p[ds]|pblendvb|pblendw|p(max|min)(s[bd]|u[wd])|roundp[ds]|rounds[ds]|insertps|pinsr[bwdq]|extractps|pextr[bdq]|pmov[sz]xb[dwq]|pmov[sz]xw[dq]|pmov[sz]xdq|pmov[sz]x|ptest|pcmpeqq|packusdw|v?movntdqa|lzcnt|popcnt|extrq|insertq|movnts[ds]|crc32|pcmp[ei]str[im]|pcmpgtq)(?!:)\\b",
            "comment" : "cpuid | grep -i 'sse4'"
            // I combined sse4.1 and 2 instructions here. Don't kill me.
         },
         {  "name": "entity.name.function.fpu_x87",
-           "match": "\\b(?i:f(2xm1|abs|addp?|bld|b?stp|chs|n?clex|u?comp{0,2}|decstp|n?disi|div(p|rp?)?|n?eni|free(p|\\s*ST)?|iadd|icomp?|idivr?|ildl?|imul|incstp|n?init|ist((pl?|l)|tp)?|isubr?|ld[1slt]?|ldcw|ldenv[dw]?|ldl2[et]|ldl[gn]2|ldpi|ldz|mulp?|nop|n?stenv[wd]?|n?stsw|pa?tan|prem1?|rndint|rstor[dw]?|n?savew?|scale|sqrt|st(p?[slt])|n?stcw|sub(p|rp?)?|tst|wait|xam|xch|xtract|yl2x(p1)?|setpm|cos|saved|sin(cos)?|cmovn?b?e?|cmovn?u|u?comip?|xrstor|xsave))\\b",
+           "match": "\\b(?i:f(2xm1|abs|addp?|bld|b?stp|chs|n?clex|u?comp{0,2}|decstp|n?disi|div(p|rp?)?|n?eni|free(p|\\s*ST)?|iadd|icomp?|idivr?|ildl?|imul|incstp|n?init|ist((pl?|l)|tp)?|isubr?|ld[1slt]?|ldcw|ldenv[dw]?|ldl2[et]|ldl[gn]2|ldpi|ldz|mulp?|nop|n?stenv[wd]?|n?stsw|pa?tan|prem1?|rndint|rstor[dw]?|n?savew?|scale|sqrt|st(p?[slt])|n?stcw|sub(p|rp?)?|tst|wait|xam|xch|xtract|yl2x(p1)?|setpm|cos|saved|sin(cos)?|cmovn?b?e?|cmovn?u|u?comip?|xrstor(64)?|xsave(64)?))(?!:)\\b",
            "comment" : "cpuid | grep -i x87"
         },
         {  "name": "entity.name.function.aes_functions",
-           "match": "\\b(?i:aes(en|de)c(last)?|aeskeygenassist|aesimc)\\b",
+           "match": "\\b(?i:aes(en|de)c(last)?|aeskeygenassist|aesimc)(?!:)\\b",
            "comment" : "cpuid | grep -i aes"
         },
+        {  "name": "entity.name.function.sha_functions",
+           "match": "\\b(?i:sha((1|256)msg[12]|1nexte|1rnds4|256rnds2))(?!:)\\b",
+           "comment" : "cpuid | grep SHA"
+        },
         {  "name": "entity.name.function.bmi1",
-           "match": "\\b(?i:andn[lq]?|bextr[lq]?|blsi[lq]?|blsmsk[lq]?|blsr[dlq]?|tzcnt[wlq]?)\\b",
+           "match": "\\b(?i:andn[lq]?|bextr[lq]?|blsi[lq]?|blsmsk[lq]?|blsr[dlq]?|tzcnt[wlq]?)(?!:)\\b",
            "comment" : "cpuid | grep -i 'bmi i'"
         },
         {  "name": "entity.name.function.bmi2",
-           "match": "\\b(?i:mulx[lq]?|pdep[lq]?|pext[lq]?|rorx[lq]?|s(h[lr]|ar)x)\\b",
+           "match": "\\b(?i:mulx[lq]?|pdep[lq]?|pext[lq]?|rorx[lq]?|s(h[lr]|ar)x)(?!:)\\b",
            "comment" : "cpuid | grep -i 'bmi2'"
         },
         {
+            "name": "entity.name.function.adx",
+            "match": "\\b(?i:ad[co]x)(?!:)\\b",
+            "comment" : "cpuid | grep -i 'adx'"
+        },
+        {
             "name": "entity.name.function.clmul",
-            "match": "\\b(?i:pclmulqdq)\\b",
+            "match": "\\b(?i:pclmulqdq)(?!:)\\b",
             "comment" : "cpuid | grep -i 'clmul'"
         },
-        {  "name": "entity.name.function.prefetchw",
-           "match": "\\b(?i:prefetchw)\\b",
-           "comment": "cpuid | grep -i 'prefetchw'"
+        {  "name": "entity.name.function.prefetchwt",
+           "match": "\\b(?i:prefetchw(t1)?)(?!:)\\b",
+           "comment": "cpuid | grep 'PREFETCHW'"
+           // Check for both prefetchw and prefetchwt
+        },
+        {  "name": "entity.name.function.clflushopt",
+           "match": "\\b(?i:clflushopt)(?!:)\\b",
+           "comment": "cpuid | grep -i 'clflush i'"
+        },
+        {  "name": "entity.name.function.rdseed",
+           "match": "\\b(?i:rdseed)(?!:)\\b",
+           "comment": "cpuid | grep -i 'rdseed'"
+        },
+        {  "name": "entity.name.function.mpx",
+           "match": "\\b(?i:bnd(c[uln]|mk|stx))(?!:)\\b",
+           "comment": "cpuid | grep -i 'mpx'"
+           // May not show up at all.
         },
         {  "name": "entity.name.function.fsgsbase",
-           "match": "\\b(?i:(rd|wr)[fg]sbase)\\b",
+           "match": "\\b(?i:(rd|wr)[fg]sbase)(?!:)\\b",
            "comment": "cpuid | grep -i 'fsgs'"
         },
         {  "name": "entity.name.function.rdrand",
-           "match": "\\b(?i:rdrand)\\b",
+           "match": "\\b(?i:rdrand)(?!:)\\b",
            "comment": "cpuid | grep -i 'rdrand'"
         },
-        {  "name": "entity.name.function.AVXx",
-           "match": "\\b(?i:vp?broadcast(s[sd]|f128)?|vp(and|addd|shuf[b]|sub[dq]|srldq|unpck[lh]q?dq|xor)|v(extract|insert|perm2)[if]128|vgather[dq]p[ds]|vp?maskmov|vpblendd|vperm([dq]|(il)?p[sd])|vpgather[dq]{1,2}|vpsllv[dq]|vpsr(avd|lv[qd])|vtestp[ds]|vzero(all|upper))\\b",
-           "comment": "cpuid | grep -i 'avx'"
+        {  "name": "entity.name.function.AVX",
+           "match": "\\b(?i:vadd(sub)?p[ds]|vandn?p[ds]|vblendv?p[ds]|vbroadcastf128|vbroadcasts[ds]|vroundp[ds]|vcmp[ps][ds]|vcvtdq2p[ds]|vcvtpd2(dq|ps)|vcvtps2(dq|pd)|vcvttp[ds]2dq|vdivp[ds])(?!:)\\b",
+           // Regular AVX
+           "comment": "cpuid | grep -i 'avx:'"
+        },
+        {  "name": "entity.name.function.AVX2",
+           "match": "\\b(?i:vpabs[bdw]|vpadd[bdqw]|vpaddu?s[bw]|vpalignr|vpandn?|vpavg[bw]|vpblend[dw]|vpblendvb|vpbroadcast[bdqw]|movddup|vbroadcasts[ds]|vbroadcasti128|vps[lr]ldq|vpcmp(eq|gt)[bdqw]|vpmovsx(wd|wq|dq|bw))(?!:)\\b",
+           "comment": "cpuid | grep -i 'avx2'"
+        },
+        {  "name": "entity.name.function.AVX2",
+           "match": "\\b(?i:vpabs[bdqw]|vpand[dq]|vpadd[dw])(?!:)\\b",
+           //  May be redundant, but oh, well.
+           "comment": "cpuid | grep -i 'avx512'"
         },
         {  "name": "entity.name.function.F16c",
-           "match": "\\b(?i:vcvt(ph2ps|ps2ph))\\b",
+           "match": "\\b(?i:vcvt(ph2ps|ps2ph))(?!:)\\b",
            "comment": "cpuid | grep -i 'f16c'"
         },
         {  "name": "entity.name.function.FMA",
-           "match": "\\b(?i:vfn?m((add(sub)?|sub(add)?)((132|213|231)[ps][ds])))\\b",
+           "match": "\\b(?i:vfn?m((add(sub)?|sub(add)?)((132|213|231)[ps][ds])))(?!:)\\b",
            "comment": "cpuid | grep -i 'fma'"
         },
+        {  "name": "entity.name.function.KNC",
+           "match": "\\b(?i:vpandn?[dq]|vpad[cd]d|vaddn?p[ds]|vpaddset[cs]d|vaddsetsps|valignd|vpblendm[dq]|vblendmp[ds]|clevict[01]|vpcmpu?d)(?!:)\\b",
+           "comment": "cpuid | grep -i 'avx512'"
+           // If you see "false", then you probably don't have them.
+        },
         {  "name": "entity.name.function.RTM",
-           "match": "\\b(?i:x(abort|begin|end|test))\\b",
+           "match": "\\b(?i:x(abort|begin|end|test))(?!:)\\b",
            "comment": "cpuid | grep -i 'rtm'"
         },
         {  "name": "entity.name.function.HLE",
-           "match": "\\b(?i:x(acquire|release|test))\\b",
+           "match": "\\b(?i:x(acquire|release|test))(?!:)\\b",
            "comment": "cpuid | grep -i 'HLE'"
         },
         {  "name": "entity.name.function.xsave",
-           "match": "\\b(?i:xsaveopt(64)?)\\b",
+           "match": "\\b(?i:xsaveopt(64)?)(?!:)\\b",
            "comment":"cpuid | grep -i 'xsaveopt'"
         },
         {  "name": "support.constant.preprocessor",
