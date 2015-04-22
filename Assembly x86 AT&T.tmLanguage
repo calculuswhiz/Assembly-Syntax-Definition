@@ -16,7 +16,7 @@
 			<key>comment</key>
 			<string>I may organize these later based on processor additions. Please investigate pop/pushq_cfi instructions.</string>
 			<key>match</key>
-			<string>\b(?i:aa[adms]|adc[bwlq]?|x?add[bwlq]?|and[bwlq]?|arpl|bound[wl]?|bs[fr][wlq]?|bswap[lq]?|bt[crs]?[wlq]?|call[wlq]?|clc|cld|cli|cltd[dqw]?|clts|cmc|cmov(n?[abgl]e?|n?[ceosz]|np|p[eo]?)?[lqw]?|cmp[bwlq]?|cmps[bwdq]?|cmpxchg[bwlq]?|cmpxchg(8|16)b|cpuid|c[lw]td[bwlq]?|daa|das|dec[bwlq]?|div[bwlq]?|enter|esc|hlt|idiv[bwlq]?|imul[bwlq]?|in[bwlq]?|inc[bwlq]?|insd?[bwlq]?|int(\s*3|o)?|inv(d|pcid)?|invlpg|iret[dfq]?|j(n?[abgl]e?|n?[ceosz]|np|p[eo]?)|jmp[lq]?|j[er]?cxz|[ls]ahf|lar|lcall|l[de]s|lea[bwlq]?|leave[lq]?|l[defgs]s|[ls][gil]dt[wl]?|ljmp[wl]?|lmsw|loadall|lods[bwdq]?|loop(n?[ez][dw]?)?|lret|lsl|ltr|mov((s?(b[lwq]?|w[lq]?|lq?|q)?)|(z?(b[lwq]|w[lq]|l|q)))?|movd|movabs|movs(x?d|w)|mov[sz]x|mul[bwlq]?|neg[bwlq]?|nop|not[bwlq]?|x?or[bwlq]?|out[bwlq]?|outs[bdw]?|pop[bwlq]?|popal?|pop[af]d|popf[lq]?|push[bwlq]?|pushal?|push[af]d|pushf[lq]?|rc[lr][bwlq]?|(rd|wr)msr|rdtscp?|retf?|ro[lr][bwlq]?|rsm|sa[lr][bwlq]?|sbb[bwlq]?|scas[bdqw]?|set(n?[abgl]e?|n?[ceosz]|np|p[eo]?)|sh[lr]d?[bwlq]?|smsw|stc|std|sti|stos[bdqw]?|str|sub[bwlq]?|swapgs|syscall|sysret|sysenter|sysexit|test[bwlq]?|ud2|ver[rw]|fwait|wbinvd|xchg[bwlq]?|x[gs]etbv|xlatb?|xsave[cs]?(64)?|xrstors?(64)?)(?!:)\b</string>
+			<string>\b(?i:aa[adms]|adc[bwlq]?|x?add[bwlq]?|and[bwlq]?|arpl|bound[wl]?|bs[fr][wlq]?|bswap[lq]?|bt[crs]?[wlq]?|call[wlq]?|clc|cld|cli|cltd[dqw]?|clts|cmc|cmov(n?[abgl]e?|n?[ceosz]|np|p[eo]?)?[lqw]?|cmp[bwlq]?|cmps[bwdq]?|cmpxchg[bwlq]?|cmpxchg(8|16)b|cpuid|c[lw]td[bwlq]?|daa|das|dec[bwlq]?|div[bwlq]?|enter|esc|hlt|idiv[bwlq]?|imul[bwlq]?|in[bwlq]?|inc[bwlq]?|insd?[bwlq]?|int(\s*3|o)?|inv(d|pcid)?|invlpg|iret[dfq]?|j(n?[abgl]e?|n?[ceosz]|np|p[eo]?)|jmp[lq]?|j[er]?cxz|[ls]ahf|lar|lcall|l[de]s|lea[bwlq]?|leave[lq]?|l[defgs]s|[ls][gil]dt[wl]?|ljmp[wl]?|lmsw|loadall|lods[bwdq]?|loop(n?[ez][dw]?)?|lret|lsl|ltr|mov((s?(b[lwq]?|w[lq]?|lq?|q)?)|(z?(b[lwq]|w[lq]|l|q)))?|movd|movabs|movs(x?d|w)|mov[sz]x[wl]|mul[bwlq]?|neg[bwlq]?|nop|not[bwlq]?|x?or[bwlq]?|out[bwlq]?|outs[bdw]?|pop[bwlq]?|popal?|pop[af]d|popf[lq]?|push[bwlq]?|pushal?|push[af]d|pushf[lq]?|rc[lr][bwlq]?|(rd|wr)msr|rdtscp?|retf?[ql]?|ro[lr][bwlq]?|rsm|sa[lr][bwlq]?|sbb[bwlq]?|scas[bdqw]?|set(n?[abgl]e?|n?[ceosz]|np|p[eo]?)|sh[lr]d?[bwlq]?|smsw|stc|std|sti|stos[bdqw]?|str|sub[bwlq]?|swapgs|syscall|sysret|sysenter|sysexit|test[bwlq]?|ud2|ver[rw]|fwait|wbinvd|xchg[bwlq]?|x[gs]etbv|xlatb?|xsave[cs]?(64)?|xrstors?(64)?)(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.instructions</string>
 		</dict>
@@ -112,7 +112,7 @@
 			<key>comment</key>
 			<string>cpuid | grep -i aes</string>
 			<key>match</key>
-			<string>\b(?i:aes(en|de)c(last)?|aeskeygenassist|aesimc)(?!:)\b</string>
+			<string>\b(?i:v?aes(en|de)c(last)?|aeskeygenassist|aesimc)(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.aes_functions</string>
 		</dict>
@@ -216,7 +216,7 @@
 			<key>comment</key>
 			<string>cpuid | grep -i 'avx2'</string>
 			<key>match</key>
-			<string>\b(?i:vpabs[bdw]|vpadd[bdqw]|vpaddu?s[bw]|vpalignr|vpandn?|vpavg[bw]|vpblend[dw]|vpblendvb|vpbroadcast[bdqw]|movddup|vbroadcasts[ds]|vbroadcasti128|vps[lr]ldq|vpcmp(eq|gt)[bdqw]|vpmovsx(wd|wq|dq|bw))(?!:)\b</string>
+			<string>\b(?i:vpabs[bdw]|vpadd[bdqw]|vpaddu?s[bw]|vpalignr|vpandn?|vpavg[bw]|vpblend[dw]|vpblendvb|vpbroadcast[bdqw]|movddup|vbroadcasts[ds]|vbroadcasti128|vps[lr]ldq|vpcmp(eq|gt)[bdqw]|vpmovsx(wd|wq|dq|bw)|v(extract|insert)i128|vperm2i128|vph(add|sub)(d|s?w)|vpmaskmov[dq]|vpmovmskb|vpor|vpsign[bdw]|vp(ext|ins)rq)(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.AVX2</string>
 		</dict>
@@ -277,8 +277,22 @@
 			<string>entity.name.function.xsave</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>Passed in thru compiler opts, I think.</string>
 			<key>match</key>
-			<string>(?&lt;!#)(#(#|(un)?assert|define|elif|else|endif|error|ident|(ifn?|un)?def|if|import|include(_next)?|line|pragma|sccs|warning))|__(FILE|LINE|DATE|TIME(STAMP)?|STDC_(VERSION|HOSTED)?|GNUC|GNUC_MINOR|GNUC_PATCHLEVEL|VERSION|STRICT_ANSI|BASE_FILE|INCLUDE_LEVEL|OPTIMIZE|OPTIMIZE_SIZE|NO_INLINE|CHAR_UNSIGNED|CHAR_BIT|INT_SHORT|SCHAR_MAX|SHRT_MAX|INT_MAX|LONG_MAX|LONG_LONG_MAX|REGISTER_PREFIX|USER_LABEL_PREFIX)__\b</string>
+			<string>\b(?i:crc32[bwlq])(?!:)\b</string>
+			<key>name</key>
+			<string>entity.name.function.crc32</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^\s*##.*$</string>
+			<key>name</key>
+			<string>comment.assembly</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;!#)(#(#(?!#)|(un)?assert|define|elif|else|endif|error|ident|(ifn?|un)?def|if|import|include(_next)?|line|pragma|sccs|warning))|__(FILE|LINE|DATE|TIME(STAMP)?|STDC_(VERSION|HOSTED)?|GNUC|GNUC_MINOR|GNUC_PATCHLEVEL|VERSION|STRICT_ANSI|BASE_FILE|INCLUDE_LEVEL|OPTIMIZE|OPTIMIZE_SIZE|NO_INLINE|CHAR_UNSIGNED|CHAR_BIT|INT_SHORT|SCHAR_MAX|SHRT_MAX|INT_MAX|LONG_MAX|LONG_LONG_MAX|REGISTER_PREFIX|USER_LABEL_PREFIX)__\b</string>
 			<key>name</key>
 			<string>support.constant.preprocessor</string>
 		</dict>
@@ -311,6 +325,27 @@
 			<string>keyword.label.assembly</string>
 		</dict>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.symbol</string>
+				</dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.assignment</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Alternative ways of writing the .set and .eqv directives.</string>
+			<key>match</key>
+			<string>\b([A-Za-z$_.0-9]+)\s*(==?)\s*</string>
+			<key>name</key>
+			<string>support.constant.alternatives</string>
+		</dict>
+		<dict>
 			<key>comment</key>
 			<string>By the way, the ~ is a bitwise not. I decided to put the two prefix operators together.</string>
 			<key>match</key>
@@ -326,13 +361,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;!\w)[-~]?(?i)(0x)?[A-F0-9]+\b</string>
+			<string>(?&lt;!\w)[-~]?(?i)(0x)[A-F0-9]+\b</string>
 			<key>name</key>
 			<string>constant.numeric.hex</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;!\w)[$](?i)(0x)?[A-F0-9]+\b</string>
+			<string>(?&lt;!\w)[$](?i)(0x)[A-F0-9]+\b</string>
 			<key>name</key>
 			<string>constant.other.hex</string>
 		</dict>
@@ -463,27 +498,6 @@
 			<string>(?&lt;!\w)\.(?i:(arch) (i8086|i[1-6]86|pentium(pro|iii?|4)?|prescott|nocona|core(2|i7)?|[lk]1om|k6(_2)?|athlon|k8|amdfam10|bdver[1-3]|btver[12]|generic(32|64)|.(mmx|sse([2-5]|4(.[12]|a))?|ssse3|avx[2]?|[vs]mx|ept|clflush|movbe|xsave(opt)?|aes|pclmul|fma|fsgsbase|rdrnd|f16c|bmi2|lzcnt|invpcid|vmfunc|hle|rtm|adx|rdseed|prfchw|smap|mpx|sha|3dnowa?|syscall|rdtscp|svme|abm|lwp|fma4|xop|cx16|padlock|avx512(p?f|cd|er)?))),\s*(no)?jumps</string>
 			<key>name</key>
 			<string>support.constant.arch_specification</string>
-		</dict>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>variable.parameter.symbol</string>
-				</dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.operator.assignment</string>
-				</dict>
-			</dict>
-			<key>comment</key>
-			<string>Alternative ways of writing the .set and .eqv directives.</string>
-			<key>match</key>
-			<string>\b([A-Za-z$_.0-9]+)\s*(==?)\s*</string>
-			<key>name</key>
-			<string>support.constant.alternatives</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
