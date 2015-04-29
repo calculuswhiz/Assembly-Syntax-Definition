@@ -149,6 +149,11 @@
             "name": "comment.assembly", 
             "match": "^\\s*##.*$"
         }, 
+        {
+          "name": "variable.parameter.other_keywords",
+          "match": "(#(alloc|write|execinstr|exclude|tls)|@((prog|no)bits|note|((pre)?init|fini)_array)|[#@%]((gnu_indirect_)?function|(tls_)?object|common|notype|gnu_unique_object)|comdat|\\.gnu\\.linkonce|discard|one_only|same_(size|contents)|STT_((GNU_I)?FUNC|OBJECT|TLS|COMMON|NOTYPE))\\b",
+          "comment": "Non-instructions. Often params to pseudo-ops."
+        },
         {  "name": "support.constant.preprocessor",
            "match": "(?<!#)(#(#(?!#)|(un)?assert|define|elif|else|endif|error|ident|(ifn?|un)?def|if|import|include(_next)?|line|pragma|sccs|warning))|__(FILE|LINE|DATE|TIME(STAMP)?|STDC_(VERSION|HOSTED)?|GNUC|GNUC_MINOR|GNUC_PATCHLEVEL|VERSION|STRICT_ANSI|BASE_FILE|INCLUDE_LEVEL|OPTIMIZE|OPTIMIZE_SIZE|NO_INLINE|CHAR_UNSIGNED|CHAR_BIT|INT_SHORT|SCHAR_MAX|SHRT_MAX|INT_MAX|LONG_MAX|LONG_LONG_MAX|REGISTER_PREFIX|USER_LABEL_PREFIX)__\\b"
         },
@@ -218,11 +223,14 @@
            "comment": "See above for details."
         },
         {  "name": "constant.character",
-           "match": "(?<!\\w)[$]?(?i)'([!-\\[\\]-~]|\\\\([\\\\bfnrt]|x[0-9a-f]{1,2}|[0-9]{3}))"
+           "match": "(?<!\\w)[$]?(?i)'([!-\\[\\]-~]|\\\\([\\\\bfnrt]|x[0-9a-f]{1,2}|[0-9]{3}))(?!')"
         },
         {
             "name": "string.quoted",
-            "match": "(\".*?\"|<.*?>)"
+            "match": "(\".*?(?<![^!]!)\"|<.*?(?<![^!]!)>|'.*?(?<![^!]!)')",
+            // Uncomment this one if you don't make frequent use of altmacro:
+            // "match": "(\".*?\"|<.*?>|'.*?')",
+            "comment": "Note that delimiting strings by any other means besides the double quotes are forbidden unless .altmacro is present or --alternate flag is given to as. ! means next char is a literal, useful for delimiters."
         },
         {
             "name": "variable.parameter.registers", 
@@ -239,22 +247,8 @@
            "comment" : "You probably won't be using these anyway... but still. Good to have reminders, I guess?"
         },
         { "name": "support.constant.subsections",
-          "match": "(?<!\\w)(?i:\\.(app-file|asci[iz]|b?align|bundle_(align_mode|(un)?lock)|bss|byte|cfi_(sections|startproc|endproc|personality|lsda|def_cfa|def_cfa_register|def_cfa_offset|adjust_cfa_offset|offset|rel_offset|register|restore|undefined|same_value|remember_state|return_column|signal_frame|window_save|escape|val_encoded_addr)|code(16(gcc)?|32|64)|data|def|desc|dim|double|eject|else(if)?|end([ei]f|func|[mr])?|exitm|equ(iv)?|eqv|err(or)?|extern|fail|file|fill|float|globa?l|hidden|hword|ident|if(def|eqs?|[gl][et]|n?[bc]|n(ot)?def|nes?)?|incbin|include|int(ernal)?|irpc?|l?comm|lflags|linkonce|loc(_mark_labels|al)?|mri|(no)?list|long|macro|(no)?altmacro|octa|org|p2align[wl]?|popsection|previous|print|protected|p?size|purgem|quad|rept|sbttl|scl|set|short|single|skip|sleb128|space|stab[dns]|string(8|16|32|64)?|struct|subsection|symver|tag|text|title|uleb128|val|version|vtable_(entry|inherit)|warning|weak(ref)?|word|zero|att_syntax(\\s*prefix)?)\\b)",
+          "match": "(?<!\\w)(?i:\\.(app-file|asci[iz]|b?align|bundle_(align_mode|(un)?lock)|bss|byte|cfi_(sections|startproc|endproc|personality|lsda|def_cfa|def_cfa_register|def_cfa_offset|adjust_cfa_offset|offset|rel_offset|register|restore|undefined|same_value|remember_state|return_column|signal_frame|window_save|escape|val_encoded_addr)|code(16(gcc)?|32|64)|data|def|desc|dim|double|eject|else(if)?|end([ei]f|func|[mr])?|exitm|equ(iv)?|eqv|err(or)?|extern|fail|file|fill|float|globa?l|hidden|hword|ident|if(def|eqs?|[gl][et]|n?[bc]|n(ot)?def|nes?)?|incbin|include|int(ernal)?|irpc?|l?comm|lflags|linkonce|loc(_mark_labels|al)?|mri|(no)?list|long|macro|(no)?altmacro|octa|org|p2align[wl]?|(pop|push)?section|previous|print|protected|p?size|purgem|quad|rept|sbttl|scl|set|short|single|skip|sleb128|space|stab[dns]|string(8|16|32|64)?|struct|subsection|symver|tag|text|title|type|uleb128|val|version|vtable_(entry|inherit)|warning|weak(ref)?|word|zero|att_syntax(\\s*prefix)?)\\b)|(LOCAL\\b)",
           "comment": "Pseudo-ops, directives, or subsection markers."
-        },
-        {  "name": "support.constant.subsections.type",
-           "match": "((?i:\\.type)(.*?)([@#%](common|(gnu_indirect_)?function|(gnu_unique_|tls_)?object|notype)|STT_(COMMON|(GNU_I)?FUNC|NOTYPE|OBJECT|TLS)))",
-           "captures": {
-               "3": { "name": "variable.parameter.symbol" }
-           },
-           "comment": "Specific to the .type pseudo-op."
-        },
-        {  "name": "support.constant.subsections.section",
-           "match": "((?i:\\.(push)?section)((.*,.*?)(@((no|prog)bits|note|((pre)?init|fini)_array)|\".*?\"))?)",
-           "captures": {
-               "5": { "name": "variable.parameter.symbol" }
-           },
-           "comment": "Specific to the .section"
         },
         {  "name": "support.constant.arch_specification",
            "match": "(?<!\\w)\\.(?i:(arch) (i8086|i[1-6]86|pentium(pro|iii?|4)?|prescott|nocona|core(2|i7)?|[lk]1om|k6(_2)?|athlon|k8|amdfam10|bdver[1-3]|btver[12]|generic(32|64)|.(mmx|sse([2-5]|4(.[12]|a))?|ssse3|avx[2]?|[vs]mx|ept|clflush|movbe|xsave(opt)?|aes|pclmul|fma|fsgsbase|rdrnd|f16c|bmi2|lzcnt|invpcid|vmfunc|hle|rtm|adx|rdseed|prfchw|smap|mpx|sha|3dnowa?|syscall|rdtscp|svme|abm|lwp|fma4|xop|cx16|padlock|avx512(p?f|cd|er)?))),\\s*(no)?jumps",
