@@ -1,0 +1,3 @@
+Just thought I'd let you know that the syntax definition is now listed as "GAS/AT&T x86/x64" in the selection list instead of "Assembly x86(_64) AT&T". That's basically all that this update does. I did this because the old name looked a little bit long to me. I also updated the readme a bit, I guess?
+
+Also, just a heads up. I'm thinking of expanding this beyond just a mere syntax def in the future. (Namely, a helper to comment out things you don't want in the syntax def file.)

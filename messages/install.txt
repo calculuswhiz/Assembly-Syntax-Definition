@@ -1,6 +1,4 @@
 [x86 Highlighting scheme - Install Message]
-    *kkhht* Uh... Hello? Ah.
-
     Hi, this is calculuswhiz or Zach. Thanks for installing my highlighting scheme! I really appreciate it. If you notice any bugs, please let me know, or submit a pull request. For a quick demo, I have included some test files in the package. They are under the directory 'test/'. I have included a gdb disas log as well as some working programs. Check it out!
 
     If you have cool snippet ideas, please let me know as well!

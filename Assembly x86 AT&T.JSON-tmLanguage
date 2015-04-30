@@ -263,6 +263,6 @@
         "S",
         "sx"
     ], 
-    "name": "Assembly x86(_64) AT&T", 
+    "name": "GAS/AT&T x86/x64",
     "scopeName": "source.s"
 }

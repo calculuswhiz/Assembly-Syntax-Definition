@@ -9,7 +9,7 @@
 		<string>sx</string>
 	</array>
 	<key>name</key>
-	<string>Assembly x86(_64) AT&amp;T</string>
+	<string>GAS/AT&amp;T x86/x64</string>
 	<key>patterns</key>
 	<array>
 		<dict>
