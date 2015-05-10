@@ -17,6 +17,7 @@ exit:
     /* Begin Data Section: */
 
 ]]></content>
-    <tabTrigger>skeleton</tabTrigger>
+    <tabTrigger>skel64</tabTrigger>
+    <description>x86_64 standalone skeleton</description>
     <scope>source.s</scope>
 </snippet>

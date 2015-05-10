@@ -288,7 +288,7 @@
 			<key>match</key>
 			<string>^\s*##.*$</string>
 			<key>name</key>
-			<string>comment.assembly</string>
+			<string>comment.define</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -375,7 +375,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;!\w)[$](?i)(0x)[A-F0-9]+\b</string>
+			<string>(?&lt;!\w)[$][-~]?(?i)(0x)[A-F0-9]+\b</string>
 			<key>name</key>
 			<string>constant.other.hex</string>
 		</dict>
