@@ -7,5 +7,6 @@ leave
 ret
 ]]></content>
     <tabTrigger>newframe32</tabTrigger>
+    <description>Set up stack frame x86</description>
     <scope>source.s</scope>
 </snippet>

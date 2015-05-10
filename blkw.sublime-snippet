@@ -5,5 +5,6 @@
 .endr
 ]]></content>
     <tabTrigger>blkw</tabTrigger>
+    <description>Write chunk of uniform data</description>
     <scope>source.s</scope>
 </snippet>
