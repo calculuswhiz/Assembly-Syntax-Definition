@@ -229,9 +229,9 @@
         },
         {
             "name": "string.quoted",
-            "match": "(\".*?(?<![^!]!)\"|<.*?(?<![^!]!)>|'.*?(?<![^!]!)')",
+            // "match": "(\".*?(?<![^!][!]|[^\\\\][\\\\])\"|<.*?(?<![^!]!)>|'.*?(?<![^!]!)')",
             // Uncomment this one if you don't make frequent use of altmacro:
-            // "match": "(\".*?\"|<.*?>|'.*?')",
+            "match": "(\".*?(?<![^\\\\][\\\\])\"|<.*?(?<![^\\\\][\\\\])>)",
             "comment": "Note that delimiting strings by any other means besides the double quotes are forbidden unless .altmacro is present or --alternate flag is given to as. ! means next char is a literal, useful for delimiters."
         },
         {

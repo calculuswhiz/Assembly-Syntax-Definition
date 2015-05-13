@@ -429,7 +429,7 @@
 			<key>comment</key>
 			<string>Note that delimiting strings by any other means besides the double quotes are forbidden unless .altmacro is present or --alternate flag is given to as. ! means next char is a literal, useful for delimiters.</string>
 			<key>match</key>
-			<string>(".*?(?&lt;![^!]!)"|&lt;.*?(?&lt;![^!]!)&gt;|'.*?(?&lt;![^!]!)')</string>
+			<string>(".*?(?&lt;![^\\][\\])"|&lt;.*?(?&lt;![^\\][\\])&gt;)</string>
 			<key>name</key>
 			<string>string.quoted</string>
 		</dict>
