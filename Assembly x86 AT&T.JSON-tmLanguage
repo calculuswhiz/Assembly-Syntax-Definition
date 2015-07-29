@@ -164,8 +164,12 @@
         },
         {
             "name": "comment.assembly", 
-            "match": "#.*$"
+            "match": "(#|//).*$"
         }, 
+        {
+            "name": "comment.slashes",
+            "match": "^[ \\t]*/.*$"
+        },
         {
             "begin": "/\\*", 
             "end": "\\*/", 

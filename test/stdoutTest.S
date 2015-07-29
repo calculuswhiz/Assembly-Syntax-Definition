@@ -2,6 +2,9 @@
 #define STDOUT      $1
 #define SYS_EXIT    $60
 
+/ Some people use slashes for comments. Gregor is a weird name.
+// Some people use double slashes for comments. Quincy is destroying San Antonio.
+
 .global _start
 .text
 
@@ -11,7 +14,7 @@ _start:
 incLoop:
     movb    %cl, 7(%rsi,1)          # Position in string
     movq    SYS_WRITE, %rax
-    movq    STDOUT, %rdi
+    movq    $STDOUT, %rdi
     movq    len, %rdx               # number of bytes
     movb    %cl, letter
     syscall

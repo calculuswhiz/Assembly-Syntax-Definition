@@ -312,9 +312,15 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>#.*$</string>
+			<string>(#|//).*$</string>
 			<key>name</key>
 			<string>comment.assembly</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^[ \t]*/.*$</string>
+			<key>name</key>
+			<string>comment.slashes</string>
 		</dict>
 		<dict>
 			<key>begin</key>
