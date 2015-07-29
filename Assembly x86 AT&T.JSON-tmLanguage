@@ -173,7 +173,7 @@
         {
             "begin": "/\\*", 
             "end": "\\*/", 
-            "name": "comment.assembly"
+            "name": "comment.multiline"
         }, 
         { "name": "keyword.label.assembly",
           "match": "((\\s+|^)([A-Za-z$_.0-9]|C-[BA])+[:])",
