@@ -16,7 +16,7 @@
 			<key>comment</key>
 			<string>I may organize these later based on processor additions. Please investigate pop/pushq_cfi instructions.</string>
 			<key>match</key>
-			<string>\b(?i:aa[adms]|adc[bwlq]?|x?add[bwlq]?|and[bwlq]?|arpl|bound[wl]?|bs[fr][wlq]?|bswap[lq]?|bt[crs]?[wlq]?|call[wlq]?|clc|cld|cli|cltd[dqw]?|clts|cmc|cmov(n?[abgl]e?|n?[ceosz]|np|p[eo]?)?[lqw]?|cmp[bwlq]?|cmps[bwdq]?|cmpxchg[bwlq]?|cmpxchg(8|16)b|cpuid|c[lw]td[bwlq]?|daa|das|dec[bwlq]?|div[bwlq]?|enter|esc|hlt|idiv[bwlq]?|imul[bwlq]?|in[bwlq]?|inc[bwlq]?|insd?[bwlq]?|int(\s*3|o)?|inv(d|pcid)?|invlpg|iret[dfq]?|j(n?[abgl]e?|n?[ceosz]|np|p[eo]?)|jmp[lq]?|j[er]?cxz|[ls]ahf|lar|lcall|l[de]s|lea[bwlq]?|leave[lq]?|l[defgs]s|[ls][gil]dt[wl]?|ljmp[wl]?|lmsw|loadall|lods[bwdq]?|loop(n?[ez][dw]?)?|lret|lsl|ltr|mov((s?(b[lwq]?|w[lq]?|lq?|q)?)|(z?(b[lwq]|w[lq]|l|q)))?|movd|movabs[bwlq]?A?|movs(x?d|w)|mov[sz]x[wl]|mul[bwlq]?|neg[bwlq]?|nop|not[bwlq]?|x?or[bwlq]?|out[bwlq]?|outs[bdw]?|pop[bwlq]?|popal?|pop[af]d|popf[lq]?|push[bwlq]?|pushal?|push[af]d|pushf[lq]?|rc[lr][bwlq]?|(rd|wr)msr|rdtscp?|retf?[ql]?|ro[lr][bwlq]?|rsm|sa[lr][bwlq]?|sbb[bwlq]?|scas[bdqw]?|set(n?[abgl]e?|n?[ceosz]|np|p[eo]?)|sh[lr]d?[bwlq]?|smsw|stc|std|sti|stos[bdqw]?|str|sub[bwlq]?|swapgs|syscall|sysret|sysenter|sysexit|test[bwlq]?|ud2|ver[rw]|fwait|wbinvd|xchg[bwlq]?A?|x[gs]etbv|xlatb?|xsave[cs]?(64)?|xrstors?(64)?)(?!:)\b</string>
+			<string>\b(?i:aa[adms]|adc[bwlq]?|x?add[bwlq]?|and[bwlq]?|arpl|bound[wl]?|bs[fr][wlq]?|bswap[lq]?|bt[crs]?[wlq]?|call[wlq]?|clc|cld|cli|cltd[dqw]?|clts|cmc|cmov(n?[abgl]e?|n?[ceosz]|np|p[eo]?)?[lqw]?|cmp[bwlq]?|cmps[bwdq]?|cmpxchg[bwlq]?|cmpxchg(8|16)b|cpuid|c[lw]td[bwlq]?|daa|das|dec[bwlq]?|div[bwlq]?|enter|esc|hlt|idiv[bwlq]?|imul[bwlq]?|in[bwlq]?|inc[bwlq]?|insd?[bwlq]?|int(\s*3|o)?|inv(d|pcid)?|invlpg|iret[dfq]?|j(n?[abgl]e?|n?[ceosz]|np|p[eo]?)|jmp[lq]?|j[er]?cxz|[ls]ahf|lar|lcall|l[de]s|lea[bwlq]?|leave[lq]?|l[defgs]s|[ls][gil]dt[wl]?|ljmp[wl]?|lmsw|loadall|lods[bwdq]?|loop(n?[ez][dw]?)?|lret|lsl|ltr|mov((s?(b[lwq]?|w[lq]?|lq?|q)?)|(z?(b[lwq]|w[lq]|l|q)))?|movd|movabs[bwlq]?A?|movs(x?d|w)|mov[sz]x[wl]?|mul[bwlq]?|neg[bwlq]?|nop|not[bwlq]?|x?or[bwlq]?|out[bwlq]?|outs[bdw]?|pop[bwlq]?|popal?|pop[af]d|popf[lq]?|push[bwlq]?|pushal?|push[af]d|pushf[lq]?|rc[lr][bwlq]?|(rd|wr)msr|rdtscp?|retf?[ql]?|ro[lr][bwlq]?|rsm|sa[lr][bwlq]?|sbb[bwlq]?|scas[bdqw]?|set(n?[abgl]e?|n?[ceosz]|np|p[eo]?)|sh[lr]d?[bwlq]?|smsw|stc|std|sti|stos[bdqw]?|str|sub[bwlq]?|swapgs|syscall|sysret|sysenter|sysexit|test[bwlq]?|ud2|ver[rw]|fwait|wbinvd|xchg[bwlq]?A?|x[gs]etbv|xlatb?|xsave[cs]?(64)?|xrstors?(64)?)(?!:)\b</string>
 			<key>name</key>
 			<string>entity.name.function.instructions</string>
 		</dict>
@@ -328,7 +328,7 @@
 			<key>end</key>
 			<string>\*/</string>
 			<key>name</key>
-			<string>comment.assembly</string>
+			<string>comment.multiline</string>
 		</dict>
 		<dict>
 			<key>comment</key>
