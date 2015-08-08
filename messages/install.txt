@@ -1,7 +1,9 @@
 [x86 Highlighting scheme - Install Message]
-    Hi, this is calculuswhiz or Zach. Thanks for installing my highlighting scheme! I really appreciate it. If you notice any bugs, please let me know, or submit a pull request. For a quick demo, I have included some test files in the package. They are under the directory 'test/'. I have included a gdb disas log as well as some working programs. Check it out!
+    Hi, this is Calculuswhiz or Zach. Thanks for installing my highlighting scheme! I really appreciate it. If you notice any bugs, please let me know, or submit a pull request. For a quick demo, I have included some test files in the package. They are under the directory 'test/'. I have included a gdb disas log as well as some working programs. Check it out!
 
     If you have cool snippet ideas, please let me know as well!
+    
+    In case you missed it in the README, I do not have plans to support Intel syntax. Somebody's made one already, and it's not like you'd use both in the same file anyway. I mean, you *could*, but why would you?
 
-    Thanks!
+    Thanks for installing!
     Zach

@@ -5,11 +5,13 @@ Sublime Text: x86 Assembly Syntax Definition (AT&T/GAS)
 
 Sublime Text syntax defn. for x86 assembly (GAS/AT&T syntax)
 
+**I do not have plans to support any other syntax type (such as Intel). Sufficient packages already exist.**
+
 Covers a lot of instructions for a lot of different cpuid flags, even if you don't have them.
 
-Purpose:  I couldn't find any good ones online, so I made one myself for my ECE391 class at UIUC. None of the ones I did find did a good job highlighting the right instructions. This is not to say that this definition is perfect, but for the purposes of your college level systems programming class, it will do just fine. I believe a good test for efficacy would be testing it on a gdb disas.
+Purpose:  I couldn't find any good ones online, so I made one myself for my ECE391 class at UIUC. None of the ones I did find did a good job highlighting the right instructions. This is not to say that this definition is perfect, but for the purposes of your college level systems programming class, it will do just fine.
 
-I have included some test files in the 'test/' directory of this package. Look around if you like. I even included a gdb disas dump.
+I have included some test files in the 'test/' directory of this package. Look around if you like. I even included a gdb disas dump, which I think is a good test for efficacy.
 
 **Installation (Any platform):**
 - Get sublime_text.
