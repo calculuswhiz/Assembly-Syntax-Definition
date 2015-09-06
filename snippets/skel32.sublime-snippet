@@ -1,0 +1,24 @@
+<snippet>
+    <content><![CDATA[
+#define SYS_EXIT    \$1
+
+.global _start
+.text
+
+_start:
+    /* Entry Point: */
+
+exit:
+    movl    SYS_EXIT, %eax
+    xorl    %ebx, %ebx              # The exit code.
+    int     \$0x80
+
+.data
+    /* Begin Data Section: */
+    
+]]></content>
+    <tabTrigger>skel32</tabTrigger>
+    <description>x86 standalone skeleton</description>
+    <scope>source.s</scope>
+</snippet>
+
