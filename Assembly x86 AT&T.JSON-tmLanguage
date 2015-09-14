@@ -167,14 +167,14 @@
             "match": "(#|//).*$"
         }, 
         {
-            "name": "comment.slashes",
-            "match": "^[ \\t]*/.*$"
-        },
-        {
             "begin": "/\\*", 
             "end": "\\*/", 
             "name": "comment.multiline"
         }, 
+        {
+            "name": "comment.slashes",
+            "match": "^[ \\t]*/.*$"
+        },
         { "name": "keyword.label.assembly",
           "match": "((\\s+|^)([A-Za-z$_.0-9]|C-[BA])+[:])",
           "comment": "Assembly label/symbols."

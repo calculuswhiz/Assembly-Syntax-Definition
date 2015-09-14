@@ -317,18 +317,18 @@
 			<string>comment.assembly</string>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>^[ \t]*/.*$</string>
-			<key>name</key>
-			<string>comment.slashes</string>
-		</dict>
-		<dict>
 			<key>begin</key>
 			<string>/\*</string>
 			<key>end</key>
 			<string>\*/</string>
 			<key>name</key>
 			<string>comment.multiline</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^[ \t]*/.*$</string>
+			<key>name</key>
+			<string>comment.slashes</string>
 		</dict>
 		<dict>
 			<key>comment</key>
