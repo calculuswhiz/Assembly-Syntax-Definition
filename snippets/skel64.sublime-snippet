@@ -19,5 +19,5 @@ exit:
 ]]></content>
     <tabTrigger>skel64</tabTrigger>
     <description>x86_64 standalone skeleton</description>
-    <scope>source.s</scope>
+    <scope>source.x86</scope>
 </snippet>

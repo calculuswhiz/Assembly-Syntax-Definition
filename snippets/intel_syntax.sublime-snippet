@@ -5,5 +5,5 @@
 ]]></content>
     <tabTrigger>intel_syntax</tabTrigger>
     <description>More of an Easter egg...</description>
-    <scope>source.s</scope>
+    <scope>source.x86</scope>
 </snippet>

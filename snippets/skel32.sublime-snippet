@@ -19,6 +19,6 @@ exit:
 ]]></content>
     <tabTrigger>skel32</tabTrigger>
     <description>x86 standalone skeleton</description>
-    <scope>source.s</scope>
+    <scope>source.x86</scope>
 </snippet>
 

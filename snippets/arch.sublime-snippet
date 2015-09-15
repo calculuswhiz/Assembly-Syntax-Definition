@@ -4,5 +4,5 @@
 ]]></content>
     <tabTrigger>arch</tabTrigger>
     <description>Define architecture (useful?)</description>
-    <scope>source.s</scope>
+    <scope>source.x86</scope>
 </snippet>

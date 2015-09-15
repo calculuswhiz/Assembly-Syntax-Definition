@@ -6,5 +6,5 @@
 ]]></content>
     <tabTrigger>blkw</tabTrigger>
     <description>Write chunk of uniform data</description>
-    <scope>source.s</scope>
+    <scope>source.x86</scope>
 </snippet>

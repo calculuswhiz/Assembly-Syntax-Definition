@@ -1,0 +1,6 @@
+1.3.0:
+- I had to overhaul the floating point decimal expression. Turns out you don't need the `0f' header. Which may give other sections some trouble.
+- Added a few more words and commands. For now, I will not add more AVX512xx instructions. They are starting to clutter up the file.
+- Found a few more undocumented pseudo-ops.
+- If you see bugs with numbers and constants, please let me know. The floating point thing was a pain.
+- Renamed the scope to `x86.'

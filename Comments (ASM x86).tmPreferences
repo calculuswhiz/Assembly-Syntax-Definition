@@ -5,7 +5,7 @@
     <key>name</key>
     <string>Comments</string>
     <key>scope</key>
-    <string>source.s, source.S</string>
+    <string>source.x86</string>
     <key>settings</key>
     <dict>
         <key>shellVariables</key>

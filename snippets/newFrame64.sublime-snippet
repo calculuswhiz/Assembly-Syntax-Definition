@@ -8,5 +8,5 @@ ret
 ]]></content>
     <tabTrigger>newFrame64</tabTrigger>
     <description>Set up stack frame x86_64</description>
-    <scope>source.s</scope>
+    <scope>source.x86</scope>
 </snippet>

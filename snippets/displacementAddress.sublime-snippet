@@ -4,5 +4,5 @@ ${1:disp}(${2:%${3:base_reg}}${4:,%${5:idx_reg}}${6:,${7:scale}})
 ]]></content>
     <tabTrigger>displace</tabTrigger>
     <description>Displacement addressing helper</description>
-    <scope>source.s</scope>
+    <scope>source.x86</scope>
 </snippet>
