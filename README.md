@@ -34,3 +34,6 @@ Sublime should automatically take care of the syntax highlighting, so there's no
 If you feel the directions are unclear, please tell me. Or tell Dennis, so we can make fun of you later.
 
 Pull requests and/or bug reports are always welcome.
+
+Demo on gdb disassembly log:
+![Demo]("../gdb_demo.png")
