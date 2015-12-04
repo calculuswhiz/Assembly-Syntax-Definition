@@ -36,4 +36,4 @@ If you feel the directions are unclear, please tell me. Or tell Dennis, so we ca
 Pull requests and/or bug reports are always welcome.
 
 Demo on gdb disassembly log:
-![Demo]("../gdb_demo.png")
+![Demo]("https://raw.githubusercontent.com/calculuswhiz/Assembly-Syntax-Definition/master/screencap/gdb_demo.png")
