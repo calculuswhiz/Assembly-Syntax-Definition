@@ -1,5 +1,6 @@
 <snippet>
     <content><![CDATA[
+// Compiles with `gcc -nostdlib`. On 64-bit machines, use the `-m32` flag also.
 #define SYS_EXIT    \$1
 
 .global _start
@@ -10,7 +11,7 @@ _start:
 
 exit:
     movl    SYS_EXIT, %eax
-    xorl    %ebx, %ebx              # The exit code.
+    xorl    %ebx, %ebx              // The exit code.
     int     \$0x80
 
 .data

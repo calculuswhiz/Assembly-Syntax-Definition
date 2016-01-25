@@ -1,5 +1,6 @@
 <snippet>
     <content><![CDATA[
+// Compiles with `gcc -nostdlib`
 #define SYS_EXIT    \$60
 
 .global _start
@@ -10,7 +11,7 @@ _start:
 
 exit:
     movq    SYS_EXIT, %rax
-    xorq    %rdi, %rdi              # The exit code.
+    xorq    %rdi, %rdi              // The exit code.
     syscall
 
 .data

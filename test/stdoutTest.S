@@ -11,14 +11,15 @@
 .text
 
 _start:
-    movq    $message, %rsi          # char *
-    movb    -2(%rsi,1), %cl         # Just trying something out.
+    movq    $message, %rsi          // char *
+    movb    -2(%rsi,1), %cl         // Just trying something out.
 incLoop:
-    movb    %cl, 7(%rsi,1)          # Position in string
+    movb    %cl, 7(%rsi,1)          // Position in string
     movq    SYS_WRITE, %rax
     movq    STDOUT, %rdi
-    movq    len, %rdx               # number of bytes
-    movb    %cl, letter             // comment test
+    movq    len, %rdx               // number of bytes
+    movb    %cl, letter             #  <- Yes, these still work. But now that
+                                    ##  you know //'s work, why would you want to?
     syscall
     movb    letter, %cl
 
@@ -27,7 +28,7 @@ incLoop:
     jg      incLoop
 
     movq    SYS_EXIT, %rax
-    xorq    %rdi, %rdi              # The exit code.
+    xorq    %rdi, %rdi              // The exit code.
     syscall
 
 .data

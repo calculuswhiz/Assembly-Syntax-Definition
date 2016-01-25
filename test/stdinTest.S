@@ -49,14 +49,14 @@ print:
     movq    SYS_WRITE, %rax
     movq    STDOUT, %rdi
     movq    $message, %rsi
-    movzx   len, %rdx           # Intro+echo
+    movzx   len, %rdx           // Intro+echo
     addq    $27, %rdx
     syscall
 
 
 exit:
     movq    SYS_EXIT, %rax
-    xorq    %rdi, %rdi              # The exit code.
+    xorq    %rdi, %rdi              // The exit code.
     syscall
 
 .data
