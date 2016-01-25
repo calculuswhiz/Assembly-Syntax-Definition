@@ -35,11 +35,13 @@ If you feel the directions are unclear, please tell me. Or tell Dennis, so we ca
 
 Pull requests and/or bug reports are always welcome.
 
-Features:
+Features (Secret Q/A):
 =========
 - Can't remember a system call number? Start with your architecture (`32`/`64`) and type the call you want (e.g. `mmap`, `read`), press tab/enter, and let the autocomplete do the rest.
     - E.g. I want to use mmap on x64. I type `64mmap`, enter, and it expands to `#define SYS_MMAP    $9`.
 - Can't remember displacement syntax? Just start typing "displace" and select the helper option in autocomplete. Then tab through the arguments.
+- How do I start a standalone assembly program? Type `skel32` or `skel64`, autocomplete. Compiles with `gcc -nostdlib`.
+- How do I set up a stack frame for calling a function? Type `newframe32` or `newframe64`.
 
 Demo on gdb disassembly log:
 ![Demo](https://raw.githubusercontent.com/calculuswhiz/Assembly-Syntax-Definition/master/screencap/gdb_demo.png)
