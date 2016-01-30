@@ -224,7 +224,7 @@
             "match": "(#|//).*$"
         }, 
         {
-            "begin": "/\\*", 
+            "begin": "\\s*/\\*", 
             "end": "\\*/", 
             "name": "comment.multiline"
         }, 
