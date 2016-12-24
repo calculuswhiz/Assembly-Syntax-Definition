@@ -1,0 +1,168 @@
+// Compiles with `gcc -nostdlib`
+#define SYS_EXIT    $60
+#define SYS_WRITE   $1
+
+#define STDOUT          $1
+
+// Some numbers:
+#define START_BOTTLES   99
+#define NUM_LOCALS      $8
+#define WRL1_LEN        $30
+#define WRL2_LEN        $53
+#define WRL3_LEN        $31
+
+.global _start
+.text
+
+.macro WRITE
+    movq    STDOUT, %rdi
+    movq    SYS_WRITE, %rax
+    syscall
+.endm
+
+.macro WRITENUM
+    movq    8(%rsp), %rdx
+    movq    (%rsp), %rsi
+    WRITE
+.endm
+
+/* void* itoa(long, char *) 
+             0q     8q
+   - char * points to the *back* of the string. itoa writes from ls digit.
+   - clobbers rdi, rax, rdx
+   - returns pointer to beginning of string as rax
+*/
+itoa:
+    pushq   %rbp
+    movq    %rsp, %rbp
+    
+    movq    16(%rsp), %rdi
+    movq    24(%rsp), %rax
+    
+    cycledigits:
+        xorq    %rdx, %rdx
+        divq    decimal
+        addq    $48, %rdx       // Add 48 to remainder, store digit
+        movb    %dl, (%rdi)     // Copy char
+        decq    %rdi            // Next digit
+        cmpq    $0, %rax
+        jg      cycledigits     // No more digits?
+    
+    leaq    1(%rdi), %rax       // return value
+
+    popq    %rbp
+    ret
+
+_start:
+    // Set up stack
+    movq    %rsp, %rbp
+    /*  
+        bptr = itoa(counter, numstring)
+        do
+        {
+            write(stdout, bptr, bptr-numstring+1) // number
+            write(stdout, regstring, 30)
+            write(stdout, bptr, bptr-numstring+1) // number
+            write(stdout, regstring2, 52)
+            counter-=1
+            bptr = itoa(counter, numstring)
+            write(stdout, bptr, bptr-numstring+1) // number
+            write(stdout, regstring3, 30)
+        } while(counter>0)
+    */
+    subq    NUM_LOCALS, %rsp
+    pushq   counter
+    pushq   $numstring
+    precall:
+    call    itoa
+    addq    $16, %rsp       // clean args
+    movq    %rax, (%rsp)      // bptr = itoa(counter, numstring)
+    
+    subq    $numstring, %rax
+    negq    %rax
+    leaq    1(%rax), %rdx
+    movq    %rdx, 8(%rsp)   // Save the calculation
+    
+    printloop:
+        WRITENUM       // write(stdout, bptr, bptr-numstring+1)
+        
+        writeline1:
+        movq    WRL1_LEN, %rdx
+        movq    $regstring, %rsi
+        WRITE               // write(stdout, regstring, 30)
+        
+        WRITENUM       // write(stdout, bptr, bptr-numstring+1)
+        
+        writeline2:
+        movq    WRL2_LEN, %rdx
+        movq    $regstring2, %rsi
+        WRITE               // write(stdout, regstring2, 52)
+        decq    counter     // counter--
+        
+        pluralcheck:
+        cmpq    $1, counter
+        jg      norm
+        cmpq    $0, counter
+        je      zeroconfirm
+        
+        oneconfirm:
+        movq    $regstring, %rdx
+        movb    $0x20 , 7(%rdx)
+        movq    $regstring2, %rdx
+        movb    $0x20 , 7(%rdx)
+        movq    $regstring3, %rdx
+        movb    $0x20 , 7(%rdx)
+        jg      norm
+        
+        zeroconfirm:
+        movq    $regstring, %rdx
+        movb    $'s, 7(%rdx)
+        movq    $regstring2, %rdx
+        movb    $'s , 7(%rdx)
+        movq    $regstring3, %rdx
+        movb    $'s , 7(%rdx)
+        
+        norm:
+        pushq   counter
+        pushq   $numstring
+        call    itoa
+        addq    $16, %rsp
+        movq    %rax, (%rsp)    // bptr = itoa(counter, numstring)
+        
+        write3:
+        subq    $numstring, %rax
+        negq    %rax
+        leaq    1(%rax), %rdx
+        movq    %rdx, 8(%rsp)
+        movq    (%rsp), %rsi
+        WRITE               // write(stdout, bptr, bptr-numstring+1)
+        
+        writeline3:
+        movq    WRL3_LEN, %rdx
+        movq    $regstring3, %rsi
+        WRITE               // write(stdout, regstring, 30)
+        
+        cmpq    $0, counter
+        jg      printloop
+
+exit:
+    movq    SYS_EXIT, %rax
+    xorq    %rdi, %rdi              // The exit code.
+    syscall
+
+.data
+    /* Begin Data Section: */
+    decimal:  // base 10
+        .quad 10
+    counter:
+        .quad   START_BOTTLES    
+    buffer:
+        .ascii "xxx"     /* Separated out because want back of string */
+    numstring:
+        .byte 'x
+    regstring:
+        .ascii " bottles of beer on the wall,\n"
+    regstring2:
+        .ascii " bottles of beer.\nTake one down, and pass it around:\n"
+    regstring3:
+        .ascii " bottles of beer on the wall.\n\n"
