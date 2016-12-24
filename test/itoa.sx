@@ -1,0 +1,45 @@
+#define SYS_EXIT    $1
+#define SYS_WRITE   $4
+
+#define STDOUT      $1
+
+#define LEN         $11
+.global _start
+.text
+
+_start:
+    movl    $(printable+9), %edi    // Pointer to end of digit string
+    movl    number, %eax
+
+cycledigits:
+    xorl    %edx, %edx
+    divl    decimal
+    addl    $48, %edx           // Add 48 to remainder, store digit
+    movb    %dl, (%edi)
+    decl    %edi                // Next digit
+    cmpl    $0, %eax
+    jg      cycledigits         // No more digits
+
+print:
+    movl    STDOUT, %ebx
+    movl    $printable, %ecx
+    movl    LEN, %edx
+    movl    SYS_WRITE, %eax
+    int     $0x80
+
+exit:
+    movl    SYS_EXIT, %eax
+    xorl    %ebx, %ebx              // The exit code.
+    int     $0x80
+
+.data
+    decimal:
+    .long 10
+    number:
+    .long 1234789
+    printable:  // Digit string goes here:
+    .zero 10
+    .byte '\n
+    .ascii "BEgin value:"
+    .value 0xffff
+    .ascii "End value"
