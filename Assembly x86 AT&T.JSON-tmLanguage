@@ -47,7 +47,7 @@
             "comment" : "cpuid | grep -i 'pni/sse3'"
         },
         {
-            "name": "entity.name.function.xsse3_simd",
+            "name": "entity.name.function.ssse3_simd",
             "match": "\\b(?i:addsubp[ds]|haddp[ds]|hsubp[ds]|v?mov(d|s[hl])dup|psign[bdw]|pshufb|pmulhrsw|pmaddubsw|phsub(s?w|d)|phadd(s?w|d)|palignr|pabs[bdw])(?!:)\\b",
             "comment" : "cpuid | grep -i 'ssse3'"
         },

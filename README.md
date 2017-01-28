@@ -3,7 +3,7 @@ Sublime Text: x86 Assembly Syntax Definition (AT&T/GAS)
 
 **This is the greatest syntax definition of All Time**
 
-Sublime Text syntax defn. for x86 assembly (GAS/AT&T syntax)
+Sublime Text syntax definition for x86 assembly (GAS/AT&T syntax)
 
 **I do not have plans to support any other syntax type (such as Intel). Sufficient packages already exist.**
 
@@ -12,6 +12,12 @@ Covers a lot of instructions for a lot of different cpuid flags, even if you don
 Purpose:  I couldn't find any good ones online, so I made one myself for my ECE391 class at UIUC. None of the ones I did find did a good job highlighting the right instructions. This is not to say that this definition is perfect, but for the purposes of your college level systems programming class, it will do just fine.
 
 I have included some test files in the 'test/' directory of this package. Look around if you like. I even included a gdb disas dump, which I think is a good test for efficacy.
+
+**Ports to other editors**
+This has become somewhat of a parent-project for various ports, so here's a list of links to ports I've made:
+- [Atom](https://github.com/calculuswhiz/atom-GAS-x86_64-highlighter)
+- [Gedit](https://github.com/calculuswhiz/gedit-GAS-x86_64-highlighter). It's a bit of a weaker port, but it should look reasonably close.
+- More perhaps to come later.
 
 **Installation (Any platform):**
 - Get sublime_text.

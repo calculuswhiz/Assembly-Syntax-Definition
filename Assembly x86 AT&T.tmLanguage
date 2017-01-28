@@ -90,7 +90,7 @@
 			<key>match</key>
 			<string>\b(?i:addsubp[ds]|haddp[ds]|hsubp[ds]|v?mov(d|s[hl])dup|psign[bdw]|pshufb|pmulhrsw|pmaddubsw|phsub(s?w|d)|phadd(s?w|d)|palignr|pabs[bdw])(?!:)\b</string>
 			<key>name</key>
-			<string>entity.name.function.xsse3_simd</string>
+			<string>entity.name.function.ssse3_simd</string>
 		</dict>
 		<dict>
 			<key>comment</key>
