@@ -17,6 +17,7 @@ I have included some test files in the 'test/' directory of this package. Look a
 
 This has become somewhat of a parent-project for various ports, so here's a list of links to ports I've made:
 - [Atom](https://github.com/calculuswhiz/atom-GAS-x86_64-highlighter)
+- [Vim](https://github.com/calculuswhiz/vim-GAS-x86_64-highlighter). WIP.
 - [Gedit](https://github.com/calculuswhiz/gedit-GAS-x86_64-highlighter). It's a bit of a weaker port, but it should look reasonably close.
 - More perhaps to come later.
 
