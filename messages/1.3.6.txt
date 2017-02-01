@@ -1,0 +1,8 @@
+Hello. It's been a while since I've put out a message.
+
+I just wanted to notify you that I've been porting the GAS x86 highlighter over to a couple other major editors. If you want, check out the repo page's readme for links. As of the current version, I've ported it to Atom (available via package store) and Vim.
+
+Here's the repo link for the main project: https://github.com/calculuswhiz/Assembly-Syntax-Definition.
+
+Thanks, and happy assembling.
+--calculuswhiz

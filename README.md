@@ -16,10 +16,10 @@ I have included some test files in the 'test/' directory of this package. Look a
 **Ports to other editors**
 
 This has become somewhat of a parent-project for various ports, so here's a list of links to ports I've made:
-- [Atom](https://github.com/calculuswhiz/atom-GAS-x86_64-highlighter)
-- [Vim](https://github.com/calculuswhiz/vim-GAS-x86_64-highlighter). WIP.
-- [Gedit](https://github.com/calculuswhiz/gedit-GAS-x86_64-highlighter). It's a bit of a weaker port, but it should look reasonably close.
-- More perhaps to come later.
+- [Atom](https://github.com/calculuswhiz/atom-GAS-x86_64-highlighter). Same highlighting features. It was a direct JSON->CSON conversion. No snippets.
+- [Vim](https://github.com/calculuswhiz/vim-GAS-x86_64-highlighter). Probably same highlighting features. Regex syntax was kind of hard to nail down. Might extend with snippet-like features later.
+- [Gedit](https://github.com/calculuswhiz/gedit-GAS-x86_64-highlighter). It's a bit of a weaker port, but it should look reasonably close. It was a bit frustrating to write, with so little documentation around.
+- More perhaps to come later. I currently have no plans to port to emacs. Writing major modes seems like a major pain compared to how easy it is for vim. In fact, porting to vim pretty much converted me over to vim as my favorite command line editor. Let's also not speak about Notepad++, which is even less capable.
 
 **Installation (Any platform):**
 - Get sublime_text.
