@@ -1,5 +1,5 @@
 // Assembly brainf*** interpreter
-// Compiles with `gcc -nostdlib brainkrieg.sx -o brainkrieg`
+// Compiles with `gcc -nostdlib -no-pie brainkrieg.sx -o brainkrieg`
 // Usage: ./brainkrieg "filename"
 // Return 0 if normal exit
 #define SYS_READ    $0
