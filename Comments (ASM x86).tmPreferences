@@ -15,7 +15,6 @@
                 <string>TM_COMMENT_START</string>
                 <key>value</key>
                 <string>// </string>
-                <!-- The colon is there to disambiguate comments and preprocessor. -->
             </dict>
             <dict>
                 <key>name</key>

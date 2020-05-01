@@ -5,5 +5,7 @@
     
     In case you missed it in the README, I do not have plans to support Intel syntax. Somebody's made one already, and it's not like you'd use both in the same file anyway. I mean, you *could*, but why would you?
 
+    If you want to code in other editors, I have also ported the scheme over to Atom, Gedit, and Vim. Check out my repos!
+
     Thanks for installing!
     Zach

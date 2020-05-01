@@ -146,4 +146,4 @@ statstruct:     // This struct is 144 bytes. Only want size (+48)
     .zero FSIZEOFF
     filesize:  // 8 bytes.
     .quad   0
-    .zero   STATSIZE-FSIZEOFF+8
+    .zero   STATSIZE-FSIZEOFF + 8

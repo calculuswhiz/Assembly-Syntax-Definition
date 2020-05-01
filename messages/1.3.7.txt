@@ -1,0 +1,4 @@
+The highlighter no longer flags preprocessor directives with spaces between the # and directive as an error. It will just show up as a regular preprocessor directive from now on. Hope that helps!
+
+Thanks, and happy assembling.
+--calculuswhiz

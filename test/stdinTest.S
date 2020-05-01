@@ -29,13 +29,13 @@ getbuf:
     jl      print
 
     decq    %rax
-    movb    buf(,%rax,1), %bl
+    movb    buf(, %rax, 1), %bl
     cmpb    $'\n, %bl
     je      print
 
     movq    $LENGTH, %rax
-    movb    $'\n, buf(,%rax,1)
-    movb    $(LENGTH+1), len
+    movb    $'\n, buf(, %rax, 1)
+    movb    $(LENGTH + 1), len
 clearstdin:
     movq    SYS_READ, %rax
     movq    STDIN, %rdi 
@@ -68,7 +68,7 @@ len:
 message:
     .ascii  "\033[38;5;01mEcho > \033[38;5;99m"
 buf:
-    .rept   (LENGTH+1)
+    .rept   (LENGTH + 1)
     .byte   0
     .endr
 junkChar:

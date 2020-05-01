@@ -201,7 +201,7 @@
             "comment": "I don't know where these are supposed to go."
         },
         {
-            "comment": "<<<<<<END feature stuff"
+            "comment": "END feature stuff"
         },
         {
             "name": "comment.define", 
@@ -218,8 +218,9 @@
             "match": "^\\s*(?<!#)(?:#(?:#(?!#)|(?:un)?assert|define|elif|else|endif|error|ident|(?:ifn?|un)?def|if|import|include(?:_next)?|line|pragma|sccs|warning))|__(?:FILE|LINE|DATE|TIME(?:STAMP)?|STDC_(?:VERSION|HOSTED)?|GNUC|GNUC_MINOR|GNUC_PATCHLEVEL|VERSION|STRICT_ANSI|BASE_FILE|INCLUDE_LEVEL|OPTIMIZE|OPTIMIZE_SIZE|NO_INLINE|CHAR_UNSIGNED|CHAR_BIT|INT_SHORT|SCHAR_MAX|SHRT_MAX|INT_MAX|LONG_MAX|LONG_LONG_MAX|REGISTER_PREFIX|USER_LABEL_PREFIX)__\\b"
         },
         {
-            "name": "invalid.warnings",
-            "match": "^\\s*(?:#\\s+(?:(?:un)?assert|define|elif|else|endif|error|ident|(?:ifn?|un)?def|if|import|include(?:_next)?|line|pragma|sccs|warning)\\b).*"
+            "name": "support.constant.preprocessor",
+            "match": "^\\s*(?:#\\s+(?:(?:un)?assert|define|elif|else|endif|error|ident|(?:ifn?|un)?def|if|import|include(?:_next)?|line|pragma|sccs|warning)\\b)",
+            "comment": "Used to be an error. Just flag as a preprocessor now."
         },
         {
             "name": "comment.assembly", 

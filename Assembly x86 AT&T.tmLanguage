@@ -328,7 +328,7 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>&lt;&lt;&lt;&lt;&lt;&lt;END feature stuff</string>
+			<string>END feature stuff</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -353,10 +353,12 @@
 			<string>support.constant.preprocessor</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>Used to be an error. Just flag as a preprocessor now.</string>
 			<key>match</key>
-			<string>^\s*(?:#\s+(?:(?:un)?assert|define|elif|else|endif|error|ident|(?:ifn?|un)?def|if|import|include(?:_next)?|line|pragma|sccs|warning)\b).*</string>
+			<string>^\s*(?:#\s+(?:(?:un)?assert|define|elif|else|endif|error|ident|(?:ifn?|un)?def|if|import|include(?:_next)?|line|pragma|sccs|warning)\b)</string>
 			<key>name</key>
-			<string>invalid.warnings</string>
+			<string>support.constant.preprocessor</string>
 		</dict>
 		<dict>
 			<key>match</key>

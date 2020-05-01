@@ -1,14 +1,15 @@
 #define SYS_EXIT    $1
 #define SYS_WRITE   $4
 
-#define STDOUT      $1
+// Extra space test
+# define STDOUT      $1
 
 #define LEN         $11
 .global _start
 .text
 
 _start:
-    movl    $(printable+9), %edi    // Pointer to end of digit string
+    movl    $(printable + 9), %edi    // Pointer to end of digit string
     movl    number, %eax
 
 cycledigits:
