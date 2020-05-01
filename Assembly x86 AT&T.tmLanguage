@@ -347,8 +347,18 @@
 			<string>variable.parameter.other_keywords</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>Normal directives</string>
 			<key>match</key>
-			<string>^\s*(?&lt;!#)(?:#(?:#(?!#)|(?:un)?assert|define|elif|else|endif|error|ident|(?:ifn?|un)?def|if|import|include(?:_next)?|line|pragma|sccs|warning))|__(?:FILE|LINE|DATE|TIME(?:STAMP)?|STDC_(?:VERSION|HOSTED)?|GNUC|GNUC_MINOR|GNUC_PATCHLEVEL|VERSION|STRICT_ANSI|BASE_FILE|INCLUDE_LEVEL|OPTIMIZE|OPTIMIZE_SIZE|NO_INLINE|CHAR_UNSIGNED|CHAR_BIT|INT_SHORT|SCHAR_MAX|SHRT_MAX|INT_MAX|LONG_MAX|LONG_LONG_MAX|REGISTER_PREFIX|USER_LABEL_PREFIX)__\b</string>
+			<string>^\s*(?&lt;!#)(?:#(?:#(?!#)|(?:un)?assert|define|elif|else|endif|error|ident|(?:ifn?|un)?def|if|import|include(?:_next)?|line|pragma|sccs|warning))\b</string>
+			<key>name</key>
+			<string>support.constant.preprocessor</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Non-hashtag directives.</string>
+			<key>match</key>
+			<string>\b__(?:FILE|LINE|DATE|TIME(?:STAMP)?|STDC_(?:VERSION|HOSTED)?|GNUC(?:_MINOR|_PATCHLEVEL)?|VERSION|STRICT_ANSI|BASE_FILE|INCLUDE_LEVEL|OPTIMIZE(?:_SIZE)?|NO_INLINE|CHAR_UNSIGNED|CHAR_BIT|INT_SHORT|SCHAR_MAX|SHRT_MAX|INT_MAX|LONG_MAX|LONG_LONG_MAX|REGISTER_PREFIX|USER_LABEL_PREFIX)__\b</string>
 			<key>name</key>
 			<string>support.constant.preprocessor</string>
 		</dict>
